@@ -1,0 +1,26 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="pain">
+      <ion-icon name="bandage-outline"></ion-icon>
+      <ion-label>Escala de Dor</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="symptoms">
+      <ion-icon name="accessibility-outline"></ion-icon>
+      <ion-label>Sintomas</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="medicaments">
+      <ion-icon name="medkit-outline"></ion-icon>
+      <ion-label>Medicamentos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="presentActionSheet()">
+      <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+      <ion-label>Opções</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>
