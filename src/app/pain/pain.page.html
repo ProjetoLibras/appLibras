@@ -1,9 +1,153 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>pain</ion-title>
+    <ion-title class="ion-text-center">Escala de dor</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+<div class="container" *ngIf="lado == 'frente'">
+  <!-- Frente -->
+  <div class="content">
+    <!-- Superior body -->
+    <div class="body-head" (click) ="pain('Cabeça')">
+      <!-- cabeça -->
+    </div>
+    <div class="body-hand-rigth" (click) ="pain('Mão-direita')">
+      <!-- mão direito -->
+    </div>
+    <div class="body-hand-left" (click) ="pain('Mão-esquerda')">
+      <!-- mão esquerdo -->
+    </div>
+    <div class="body-arm-rigth" (click) ="pain('Braço-direito')">
+      <!-- braço direito -->
+    </div>
+    <div class="body-arm-left" (click) ="pain('Braço-esquerdo')">
+      <!-- braço esquerdo -->
+    </div>
+    <div class="body-forearm-rigth" (click) ="pain('Antebraço-direito')">
+      <!-- Ante braço direito -->
+    </div>
+    <div class="body-forearm-left" (click) ="pain('Antebraço-esquerdo')">
+      <!-- ante braço esquerdo -->
+    </div>
+    <div class="body-shoulder-rigth" (click) ="pain('Ombro-direito')">
+      <!-- ombro direito -->
+    </div>
+    <div class="body-shoulder-left" (click) ="pain('Ombro-esquerdo')">
+      <!-- ombro esquerdo -->
+    </div>
+    <div class="body-chest-right" (click) ="pain('Peito-direito')">
+      <!-- peito direito -->
+    </div>
+    <div class="body-chest-left" (click) ="pain('Peito-esquerdo')">
+      <!-- peito esquerdo -->
+    </div>
+    <div class="body-belly" (click) ="pain('barriga')">
+      <!-- barriga -->
+    </div>
+    <!-- Inferior body -->
+    <div class="body-thigh-right" (click) ="pain('Coxa-direita')">
+      <!-- coxa direita -->
+    </div>
+    <div class="body-thigh-left" (click) ="pain('Coxa-esquerda')">
+      <!-- coxa esquerda -->
+    </div>
+    <div class="body-foot-rigth" (click) ="pain('Pé-esquerdo')">
+      <!-- pé direito -->
+    </div>
+    <div class="body-foot-left" (click) ="pain('Pé-direito')">
+      <!-- pé Esquerdo -->
+    </div>
+    <div class="body-knee-right" (click) ="pain('Joelho-direito')">
+      <!-- joelho direito -->
+    </div>
+    <div class="body-knee-left" (click) ="pain('Joelho-esquerdo')">
+      <!-- joelho esquerdo -->
+    </div>
+    <div class="body-leg-rigth" (click) ="pain('perna-direita')">
+      <!-- perna direito -->
+    </div>
+    <div class="body-leg-left" (click) ="pain('Perna-esquerda')">
+      <!-- perna esquerdo -->
+    </div>
+  </div>
+</div>
+<!-- costas -->
+<div class="container" *ngIf="lado == 'costas'">
+  <!-- Frente -->
+  <div class="content-back">
+    <!-- Superior body -->
+    <div class="body-back-head">
+      <!-- cabeça atras -->
+    </div>
+    <div class="body-back-hand-rigth">
+      <!-- mão direito atras -->
+    </div>
+    <div class="body-back-hand-left">
+      <!-- mão esquerdo atras -->
+    </div>
+    <div class="body-back-arm-rigth">
+      <!-- braço direito atras -->
+    </div>
+    <div class="body-back-arm-left">
+      <!-- braço esquerdo atras -->
+    </div>
+    <div class="body-back-forearm-rigth">
+      <!-- Ante braço direito atras -->
+    </div>
+    <div class="body-back-forearm-left">
+      <!-- ante braço esquerdo atras -->
+    </div>
+    <div class="body-back-shoulder-rigth">
+      <!-- ombro direito atras -->
+    </div>
+    <div class="body-back-shoulder-left">
+      <!-- ombro esquerdo atras -->
+    </div>
+    <div class="body-back-chest-right">
+      <!-- peito direito atras -->
+    </div>
+    <div class="body-back-chest-left">
+      <!-- peito esquerdo atras -->
+    </div>
+    <div class="body-back-belly">
+      <!-- barriga atras -->
+    </div>
+    <!-- Inferior body -->
+    <div class="body-back-thigh-right">
+      <!-- coxa direita atras -->
+    </div>
+    <div class="body-back-thigh-left">
+      <!-- coxa esquerda atras -->
+    </div>
+    <div class="body-back-foot-left">
+      <!-- pé esquerdo atras -->
+    </div>
+    <div class="body-back-foot-rigth">
+      <!-- pé direito atras -->
+    </div>
+    <div class="body-back-knee-right">
+      <!-- joelho direito atras -->
+    </div>
+    <div class="body-back-knee-left">
+      <!-- joelho esquerdo atras -->
+    </div>
+    <div class="body-back-leg-rigth">
+      <!-- perna direito atras -->
+    </div>
+    <div class="body-back-leg-left">
+      <!-- perna esquerdo atras -->
+    </div>
+  </div>
+</div>
+<div class="select">
+  <ion-segment [(ngModel)]="lado">
+    <ion-segment-button value="frente">
+      <ion-label>Frente</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="costas">
+      <ion-label>Costas</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</div>
 </ion-content>
