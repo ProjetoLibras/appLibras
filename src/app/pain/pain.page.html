@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark-green">
     <ion-title class="ion-text-center">Escala de dor</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -141,7 +141,8 @@
   </div>
 </div>
 <div class="select">
-  <ion-segment [(ngModel)]="lado">
+  <!-- <ion-segment [(ngModel)]="lado" color="dark-green"> -->
+  <ion-segment (ionChange)="segmentChanged($event)" color="dark-green">
     <ion-segment-button value="frente">
       <ion-label>Frente</ion-label>
     </ion-segment-button>

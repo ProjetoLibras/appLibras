@@ -15,22 +15,19 @@ export class PainPage implements OnInit {
     console.log(pain)
   }
 
-open(num){
-    //abrir modal
-    // document
-    // .querySelector('.pains')
-    // .classList
-    // .remove('active')
-    console.log(num)
-}
-close(){
-    //fechar modal
-    document
-    .querySelector('.pains')
-    .classList
-    .add('active')
-}
+  segmentChanged(event: any) {
 
+    if (event.detail.value === 'frente') {
+
+      this.lado = 'frente'
+      console.log(this.lado);
+
+    } else {
+      this.lado = 'costas'
+      console.log(this.lado);
+    }
+
+  }
 
 }
 
