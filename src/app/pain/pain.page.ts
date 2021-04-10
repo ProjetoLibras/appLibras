@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,12 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PainPage implements OnInit {
   lado = 'frente';
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
   pain(pain){
     console.log(pain)
+    this.router.navigate(['/scale-pain'])
   }
 
   segmentChanged(event: any) {

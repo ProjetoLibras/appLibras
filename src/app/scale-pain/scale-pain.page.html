@@ -1,0 +1,83 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="dark-green">
+    <ion-title class="ion-text-center">Escala</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="main">
+  <div class="pains">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Dores</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <span>dor 1</span><br>
+        <span>dor 3</span><br>
+        <span>dor 4</span><br>
+        <span>dor 5</span><br>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div class="scale">
+    <ion-text color="">
+      <h5 class="ion-text-center">De 0 a 10 escolha o grau de dor</h5>
+    </ion-text>
+    <div class="scale-select">
+      <ion-list>
+        <ion-radio-group value="">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div class="sem-dor">
+                  <img src="/assets/imgs/semDor.png" alt="Sem dor">
+                  <ion-text color="primary">
+                    <p>Sem dor</p>
+                    <p>0</p>
+                  </ion-text>
+                  <ion-item>
+                    <ion-radio slot="" value="sem-dor"></ion-radio>
+                  </ion-item>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div class="pouca-dor">
+                  <img src="/assets/imgs/poucaDor.png" alt="Pouca dor">
+                  <ion-text color="warning">
+                    <p>Pouca dor</p>
+                    <p>5</p>
+                  </ion-text>
+                  <ion-item>
+                    <ion-radio value="pouca-dor"></ion-radio>
+                  </ion-item>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div class="muita-dor">
+                  <img src="/assets/imgs/muitaDor.png" alt="Muita dor">
+                  <ion-text color="danger">
+                    <p>Muita dor</p>
+                    <p>10</p>
+                  </ion-text>
+                  <ion-item>
+                    <ion-radio value="muita-dor"></ion-radio>
+                  </ion-item>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-radio-group>
+      </ion-list>
+    </div>
+  </div>
+  <div class="buttons">
+    <div class="button-back" [routerLink]="['/tabs/pain']">
+      <p>Adicionar <br> mais</p>
+    </div>
+    <div class="button-ok">
+      <p>Prosseguir</p>
+    </div>
+  </div>
+</div>
+</ion-content>
