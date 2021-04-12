@@ -7,14 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pain.page.scss'],
 })
 export class PainPage implements OnInit {
-  lado = 'frente';
+  lado = 'costas';
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
   pain(pain){
     console.log(pain)
-    this.router.navigate(['/scale-pain'])
+    // this.router.navigate(['/scale-pain'])
   }
 
   segmentChanged(event: any) {
