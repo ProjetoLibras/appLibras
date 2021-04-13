@@ -25,6 +25,11 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+// Font poppins
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+:root{
+  font-family: 'Poppins', sans-serif;
+}
 // Dark green
 :root {
   --ion-color-dark-green: #0fff98;
@@ -42,22 +47,4 @@
   --ion-color-contrast-rgb: var(--ion-color-dark-green-contrast-rgb);
   --ion-color-shade: var(--ion-color-dark-green-shade);
   --ion-color-tint: var(--ion-color-dark-green-tint);
-}
-// backgroun defalt
-:root {
-  --ion-color-backgroun-defalt: #E9ECEF;
-  --ion-color-backgroun-defalt-rgb: 233,236,239;
-  --ion-color-backgroun-defalt-contrast: #000000;
-  --ion-color-backgroun-defalt-contrast-rgb: 0,0,0;
-  --ion-color-backgroun-defalt-shade: #cdd0d2;
-  --ion-color-backgroun-defalt-tint: #ebeef1;
-}
-
-.ion-color-backgroun-defalt {
-  --ion-color-base: var(--ion-color-backgroun-defalt);
-  --ion-color-base-rgb: var(--ion-color-backgroun-defalt-rgb);
-  --ion-color-contrast: var(--ion-color-backgroun-defalt-contrast);
-  --ion-color-contrast-rgb: var(--ion-color-backgroun-defalt-contrast-rgb);
-  --ion-color-shade: var(--ion-color-backgroun-defalt-shade);
-  --ion-color-tint: var(--ion-color-backgroun-defalt-tint);
 }

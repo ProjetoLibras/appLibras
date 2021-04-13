@@ -13,10 +13,9 @@
       </ion-card-header>
 
       <ion-card-content>
-        <span>dor 1</span><br>
-        <span>dor 3</span><br>
-        <span>dor 4</span><br>
-        <span>dor 5</span><br>
+        <div *ngFor="let pain of scalePains">
+          <span>[pain]=""</span>
+        </div>
       </ion-card-content>
     </ion-card>
   </div>
@@ -26,7 +25,7 @@
     </ion-text>
     <div class="scale-select">
       <ion-list>
-        <ion-radio-group value="">
+        <ion-radio-group [(ngModel)]="scale">
           <ion-grid>
             <ion-row>
               <ion-col>
@@ -72,7 +71,7 @@
     </div>
   </div>
   <div class="buttons">
-    <div class="button-back" [routerLink]="['/tabs/pain']">
+    <div class="button-back" (click)="save()">
       <p>Adicionar <br> mais</p>
     </div>
     <div class="button-ok" [routerLink]="['/tabs/symptoms']">

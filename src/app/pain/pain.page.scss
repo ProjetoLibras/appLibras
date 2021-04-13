@@ -1,4 +1,7 @@
 // Corpo frente
+:root{
+  font-family: 'Poppins', sans-serif;
+}
 .content{
   position: absolute;
   width: 100%;
@@ -6,7 +9,7 @@
   background-image: url('/assets/imgs/CorpoFrente.svg');
   background-repeat: no-repeat;
   overflow: hidden;
-  margin-left: 2rem;
+  margin-left: 3rem;
   top: 3rem;
   z-index: 2;
 }
@@ -14,23 +17,23 @@
 position: absolute;
 width: 2rem;
 height: 3.5rem;
-// background:black;
+background:black;
 top: 1rem;
-left: 6.5rem;
+left: 6.7rem;
 }
 .body-hand-rigth{
 position: absolute;
 width: 2rem;
 height: 2rem;
-// background: black;
-right: 6rem;
+background: black;
+right: 8rem;
 top: 14rem;
 }
 .body-hand-left{
   position: absolute;
   width: 2rem;
   height: 2rem;
-  // background: black;
+  background: black;
   top: 14rem;
   left: 1rem;
 }
@@ -38,31 +41,31 @@ top: 14rem;
   position: absolute;
   width: 2rem;
   height: 4rem;
-  // background: black;
+  background: black;
   bottom: 14rem;
-  right: 10rem;
+  right: 12.2rem;
 }
 .body-thigh-left{
   position: absolute;
   width: 2rem;
   height: 4rem;
-  // background: black;
+  background: black;
   bottom: 14rem;
   left: 5rem;
-}
-.body-foot-left{
-  position: absolute;
-  width: 2rem;
-  height: 2rem;
-  // background: black;
-  bottom: 4rem;
-  right: 10rem;
 }
 .body-foot-rigth{
   position: absolute;
   width: 2rem;
   height: 2rem;
-  // background: black;
+  background: black;
+  bottom: 4rem;
+  right: 12rem;
+}
+.body-foot-left{
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background: black;
   bottom: 4rem;
   left: 5rem;
 }
@@ -70,15 +73,15 @@ top: 14rem;
   position: absolute;
   width: 2.5rem;
   height: 1.2rem;
-  // background: black;
+  background: black;
   top: 4.5rem;
-  right: 9rem;
+  right: 11rem;
 }
 .body-shoulder-left{
   position: absolute;
   width: 2.5rem;
   height: 1.2rem;
-  // background: black;
+  background: black;
   top: 4.5rem;
   left: 4rem;
 }
@@ -86,15 +89,15 @@ top: 14rem;
   position: absolute;
   width: 2rem;
   height: 3rem;
-  // background: black;
+  background: black;
   top: 10.5rem;
-  right: 7rem;
+  right: 9rem;
 }
 .body-forearm-left{
   position: absolute;
   width: 2rem;
   height: 3rem;
-  // background: black;
+  background: black;
   top: 10.5rem;
   left: 2rem;
 }
@@ -102,15 +105,15 @@ top: 14rem;
   position: absolute;
   width: 2rem;
   height: 3rem;
-  // background: black;
+  background: black;
   top: 7rem;
-  right: 8rem;
+  right: 10rem;
 }
 .body-arm-left{
   position: absolute;
   width: 2rem;
   height: 3rem;
-  // background: black;
+  background: black;
   top: 7rem;
   left: 3rem;
 }
@@ -118,16 +121,16 @@ top: 14rem;
   position: absolute;
   width: 2rem;
   height: 2rem;
-  // background: black;
+  background: black;
   top: 6rem;
-  right: 10.2rem;
+  right: 12.5rem;
 
 }
 .body-chest-left{
   position: absolute;
   width: 2rem;
   height: 2rem;
-  // background: black;
+  background: black;
   top: 6rem;
   left: 5.2rem;
 }
@@ -135,7 +138,7 @@ top: 14rem;
   position: absolute;
   width: 4rem;
   height: 4rem;
-  // background: black;
+  background: black;
   top: 9rem;
   left: 5.5rem;
 }
@@ -143,15 +146,15 @@ top: 14rem;
   position: absolute;
   width: 2rem;
   height: 2rem;
-  // background: black;
+  background: black;
   bottom: 11rem;
-  right: 10rem ;
+  right: 12rem ;
 }
 .body-knee-left{
   position: absolute;
   width: 2rem;
   height: 2rem;
-  // background: black;
+  background: black;
   bottom: 11rem;
   left: 4.7rem;
 }
@@ -159,15 +162,15 @@ top: 14rem;
   position: absolute;
   width: 2rem;
   height: 3.5rem;
-  // background: black;
+  background: black;
   bottom: 6.7rem;
-  right: 10rem;
+  right: 12rem;
 }
 .body-leg-left{
   position: absolute;
   width: 2rem;
   height: 3.5rem;
-  // background: black;
+  background: black;
   bottom: 6.7rem;
   left: 4.7rem;
 }
@@ -321,7 +324,6 @@ top: 14rem;
 // others
 ion-title {
   opacity: 0.7;
-  font-family: 'poppins';
 }
 .modal{
   background: var(--ion-color-dark-green);
