@@ -14,17 +14,17 @@ padding: 0px 5px 0px 5px;
 .sem-dor{
   border: rgba(0, 0, 0, 0.2) solid 1px;
   border-radius: 0.3rem;
-  box-shadow: 2px 2px 2px rgb(114, 114, 114);
+  box-shadow: 2px 2px 2px rgb(202, 202, 202);
 }
 .pouca-dor{
   border: rgba(0, 0, 0, 0.2) solid 1px;
   border-radius: 0.3rem;
-  box-shadow: 2px 2px 2px rgb(114, 114, 114);
+  box-shadow: 2px 2px 2px rgb(202, 202, 202);
 }
 .muita-dor{
   border: rgba(0, 0, 0, 0.2) solid 1px;
   border-radius: 0.3rem;
-  box-shadow: 2px 2px 2px rgb(114, 114, 114);
+  box-shadow: 2px 2px 2px rgb(202, 202, 202);
 }
 .muita-dor p{
   padding: 0;
@@ -75,4 +75,7 @@ padding: 0px 5px 0px 5px;
   margin: 10px;
   border-radius: 0.4rem;
   margin-left: 25px;
+}
+ion-radio{
+  margin-left: 1.4rem;
 }

@@ -7,7 +7,7 @@ import { ScalePain } from './scale-pain';
 export class PainScaleService {
 
   painScales: ScalePain[] = [
-    { id: 1, scale: '', pain: '' },
+    { id: 1, scale: '999', pain: 'Teste' },
 
   ]
 
@@ -33,5 +33,10 @@ export class PainScaleService {
       this.painScales.push(scalePain);
     }
     console.log(this.painScales)
+  }
+
+  delete(id: number){
+    const painScaleIndex = this.painScales.findIndex( (value) => value.id == id)
+    this.painScales.splice(painScaleIndex, 1);
   }
 }

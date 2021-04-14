@@ -12,9 +12,9 @@ import { PainScaleService } from '../shared/pain-scale.service';
 export class ScalePainPage implements OnInit {
   humanBody: string;
   scalePain: ScalePain;
-  scale: string
+  scale: string;
+  pains: any[];
 
-  scalePains: ScalePain;
 
 // public painsScale = [
 //   {id: 1, scale: '', pain: ''}
@@ -39,12 +39,22 @@ export class ScalePainPage implements OnInit {
     this.scalePain = new ScalePain();
 
     this.humanBody = this.activatedRoute.snapshot.params['id'];
+
+    this.pains = this.scalePainService.painScales;
   }
   save(){
     this.scalePain.pain = this.humanBody;
     this.scalePain.scale = this.scale;
     this.scalePainService.save(this.scalePain);
     this.router.navigate(['/tabs/pain'])
+  }
+
+  remove(id: number){
+    this.scalePainService.delete(id)
+  }
+
+  pross(){
+    console.log(this.pains)
   }
 }
 
