@@ -1,9 +1,63 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>medicament</ion-title>
+  <!-- Titulo da Pagina -->
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Medicamentos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+ <!-- Formulário de Medicamento -->
+<form>
+  <!-- Linha 1 -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Remédio</ion-label>
+          <ion-input disabled="true"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
 
+    <!-- Linha 2 -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Tipo</ion-label>
+          <ion-input disabled="true"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- Linha 3 -->
+    <ion-row>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating">Dosagem</ion-label>
+          <ion-input disabled="true"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+        <ion-label position="floating">Horário</ion-label>
+        <ion-input disabled="true"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- Linha 4 -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Observações</ion-label>
+          <ion-textarea disabled="true"></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</form>
 </ion-content>
