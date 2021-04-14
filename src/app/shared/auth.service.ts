@@ -29,28 +29,54 @@ export class AuthService {
   }
 
   registerPaciente(user: UsersPaciente){
+    this.afa.signOut();
     this.afa.createUserWithEmailAndPassword(user.email, user.password);
 
-    this.afa.onAuthStateChanged((users)=>{
-      users.updateProfile({displayName: user.name, photoURL: ''});
-      if(users){
-        this.registerUserPaciente(user, users.uid);
-      }
-    })
+
+    // this.afa.onAuthStateChanged((users)=>{
+    //   users.updateProfile({displayName: user.name, photoURL: ''});
+    //   if(users){
+    //     this.registerUserPaciente(user, users.uid);
+    //   }
+    // })
   }
 
   registerUserPaciente(user: UsersPaciente, id: string){
-        const { tipousuario, name, email, cartaosus, faixaetaria  } = user;
-        this.afs.collection('users').doc(id).set(
-          {
-            tipousuario: tipousuario,
-            name: name,
-            email: email,
-            cartaosus: cartaosus,
-            faixaetaria: faixaetaria,
-          }
-        )
+    const { name,
+      email,
+      cartaosus,
+      faixaetaria,
+      tiposanguineo,
+      datanascimento,
+      celular,
+      comorbidades,
+      zipcode,
+      address,
+      address_district,
+      address_number,
+      address_city,
+      address_state,
+      address_complement, } = user;
+    this.afs.collection('users').doc(id).set(
+      {
+        name: name,
+        email: email,
+        cartaosus: cartaosus,
+        faixaetaria: faixaetaria,
+        tiposanguineo: tiposanguineo,
+        datanascimento: datanascimento,
+        celular: celular,
+        comorbidades: comorbidades,
+        zipcode: zipcode,
+        address: address,
+        address_district: address_district,
+        address_number: address_number,
+        address_city: address_city,
+        address_state: address_state,
+        address_complement: address_complement
       }
+    )
+  }
 
       registerAgente(user: UsersAgentesaude){
         this.afa.createUserWithEmailAndPassword(user.email, user.password);

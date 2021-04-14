@@ -1,22 +1,22 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="dark-green">
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item class="ion-margin-top" lines="none">
+  <ion-item>
     <ion-label position="stacked">E-mail</ion-label>
-    <ion-input name="email" type="email" placeholder="E-mail"  [(ngModel)]="login.email"></ion-input>
+    <ion-input name="email" type="email" placeholder=""  [(ngModel)]="login.email"></ion-input>
   </ion-item>
 
-  <ion-item class="ion-margin-top" lines="none">
-    <ion-label position="stacked">Senha</ion-label>
+  <ion-item>
+    <ion-label position="stacked">CPF</ion-label>
     <ion-input name="senha" type="password" [(ngModel)]="login.password"></ion-input>
   </ion-item>
 
 
-  <ion-button expand="block" color="primary" (click)="signIn()">Entrar</ion-button>
+  <ion-button expand="block" color="dark-green" (click)="signIn()">Entrar</ion-button>
   <ion-button expand="block" color="secondary"  [routerLink]="['/signup/']">Cadastrar</ion-button>
-  <ion-button expand="block" color="tertiary">Esqueceu a senha?</ion-button>
+  <ion-button expand="block" color="medium">Esqueceu a senha?</ion-button>
 </ion-content>
