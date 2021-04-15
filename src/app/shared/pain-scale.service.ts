@@ -6,10 +6,7 @@ import { ScalePain } from './scale-pain';
 })
 export class PainScaleService {
 
-  painScales: ScalePain[] = [
-    { id: 1, scale: '999', pain: 'Teste' },
-
-  ]
+  painScales: ScalePain[] = []
 
   constructor() { }
 
@@ -28,8 +25,12 @@ export class PainScaleService {
       scalePainArr.scale = scalePain.scale;
       scalePainArr.pain = scalePain.pain;
     } else {
-      const lastId = this.painScales[this.painScales.length-1].id;
-      scalePain.id = lastId + 1;
+      if(this.painScales.length > 0 ){
+        const lastId = this.painScales[this.painScales.length-1].id;
+        scalePain.id = lastId + 1;
+      }else{
+        scalePain.id = 1;
+      }
       this.painScales.push(scalePain);
     }
     console.log(this.painScales)

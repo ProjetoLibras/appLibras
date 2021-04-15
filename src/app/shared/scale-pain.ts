@@ -1,5 +1,5 @@
 export class ScalePain {
-  id: number;
-  scale: string;
-  pain: string;
+  id: number = 0;
+  scale: string = "";
+  pain: string = "";
 }
