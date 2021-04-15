@@ -1,72 +1,48 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Cadastro de Usuário</ion-title>
+  <ion-toolbar color="dark-green">
+    <ion-title>CADASTRO</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-list>
-    <ion-radio-group [(ngModel)]="tipousuario">
-      <ion-list-header>
-        <ion-label>Qual usuário você é?</ion-label>
-      </ion-list-header>
-
-      <ion-item>
-        <ion-label>Paciente</ion-label>
-        <ion-radio slot="start" value="paciente"></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Agente de Saúde</ion-label>
-        <ion-radio slot="start" value="agentesaude"></ion-radio>
-      </ion-item>
-
-    </ion-radio-group>
-
-    <ion-item *ngIf="tipousuario=='paciente'">
-      <ion-label position="stacked">Nome Paciente</ion-label>
-      <ion-input name="namepaciente" type="text" placeholder="" [(ngModel)]="usersPaciente.name"></ion-input>
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input name="email" type="email" [(ngModel)]="email"></ion-input>
     </ion-item>
 
-    <ion-item *ngIf="tipousuario=='paciente'">
-      <ion-label position="stacked">Cartão SUS</ion-label>
-      <ion-input name="cartaosus" type="text" placeholder="" [(ngModel)]="usersPaciente.cartaosus"></ion-input>
+    <ion-item>
+      <ion-label position="stacked">CPF</ion-label>
+      <ion-input name="password" type="" placeholder="SUA SENHA SERÁ O CPF" [(ngModel)]="password" (ionBlur)="validaCPF($event)"></ion-input>
     </ion-item>
 
-    <ion-item *ngIf="tipousuario=='paciente'">
-      <ion-label position="stacked">Cartão SUS</ion-label>
-      <ion-input name="cartaosus" type="text" placeholder="" [(ngModel)]="usersPaciente.cartaosus"></ion-input>
-    </ion-item>
-    <ion-item *ngIf="tipousuario=='paciente'">
-      <ion-label position="stacked">CEP</ion-label>
-      <ion-input name="zipcode" type="text" placeholder="" [(ngModel)]="usersPaciente.zipcode"></ion-input>
-    </ion-item>
-    <ion-item *ngIf="tipousuario=='paciente'">
-      <ion-label position="stacked">Endereço</ion-label>
-      <ion-input name="address" type="text" placeholder="Rua, Avenida" [(ngModel)]="usersPaciente.address"></ion-input>
-    </ion-item>
-    <ion-item *ngIf="tipousuario=='paciente'">
-      <ion-label position="stacked">Número</ion-label>
-      <ion-input name="address_number" type="text" placeholder="" [(ngModel)]="usersPaciente.address_number"></ion-input>
-    </ion-item>
-    <ion-item *ngIf="tipousuario=='paciente'">
-      <ion-label position="stacked">Bairro</ion-label>
-      <ion-input name="address_district" type="text" placeholder="Bairro" [(ngModel)]="usersPaciente.address_district"></ion-input>
-    </ion-item>
-    <ion-item *ngIf="tipousuario=='paciente'">
-      <ion-label position="stacked">Cidade</ion-label>
-      <ion-input name="address_city" type="text" placeholder="" [(ngModel)]="usersPaciente.address_city"></ion-input>
-    </ion-item>
-    <ion-item *ngIf="tipousuario=='paciente'">
-      <ion-label position="stacked">Estado</ion-label>
-      <ion-input name="address_state" type="text" placeholder="" [(ngModel)]="usersPaciente.address_state"></ion-input>
+    <ion-item>
+      <ion-label position="floating">Nome Completo</ion-label>
+      <ion-input name="namecompleto" type="text" [(ngModel)]="usersPaciente.name"></ion-input>
     </ion-item>
 
+    <ion-item>
+      <ion-label position="floating">Cartão SUS</ion-label>
+      <ion-input name="cartaosus" type="text" [(ngModel)]="usersPaciente.cartaosus"></ion-input>
+    </ion-item>
 
-    <ion-item *ngIf="tipousuario=='paciente'">
-      <ion-label position="stacked">Faixa etária</ion-label>
-      <ion-select  [(ngModel)]="usersPaciente.faixaetaria" placeholder="Selecione">
+    <ion-item>
+      <ion-label position="stacked">Tipo Sanguíneo</ion-label>
+      <ion-select [(ngModel)]="usersPaciente.tiposanguineo" placeholder="Selecione">
+        <ion-select-option value="A+">A+</ion-select-option>
+        <ion-select-option value="A-">A-</ion-select-option>
+        <ion-select-option value="B+">B+</ion-select-option>
+        <ion-select-option value="B-">B-</ion-select-option>
+        <ion-select-option value="AB+">AB+</ion-select-option>
+        <ion-select-option value="AB-">AB-</ion-select-option>
+        <ion-select-option value="O+">O+</ion-select-option>
+        <ion-select-option value="O-">O-</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Faixa Etária</ion-label>
+      <ion-select [(ngModel)]="usersPaciente.faixaetaria" placeholder="Selecione">
         <ion-select-option value="Criança">Criança</ion-select-option>
         <ion-select-option value="Joven">Jovem</ion-select-option>
         <ion-select-option value="Adulto">Adulto</ion-select-option>
@@ -74,43 +50,98 @@
       </ion-select>
     </ion-item>
 
-    <ion-item  *ngIf="tipousuario=='agentesaude'">
-      <ion-label position="stacked">Nome do Agende de Saúde</ion-label>
-      <ion-input name="nameagentesaude" type="text" placeholder=""  [(ngModel)]="usersAgentesaude.name"></ion-input>
-    </ion-item>
-
-    <ion-item  *ngIf="tipousuario=='agentesaude'">
-      <ion-label position="stacked">Profissional da saúde</ion-label>
-      <ion-select  [(ngModel)]="usersAgentesaude.id_professional" (ionChange)="setProfessional($event)">
-        <ion-select-option value="">Selecione</ion-select-option>
-        <ion-select-option *ngFor="let professional  of professionals" [value]="professional.id">{{ professional.description }}
-        </ion-select-option>
+    <ion-item>
+      <ion-label position="stacked">Sexo</ion-label>
+      <ion-select [(ngModel)]="usersPaciente.sexo" placeholder="Selecione">
+        <ion-select-option value="masculino">Masculino</ion-select-option>
+        <ion-select-option value="feminino">Feminino</ion-select-option>
       </ion-select>
     </ion-item>
 
-
-    <ion-item  *ngIf="tipousuario=='agentesaude'">
-      <ion-label position="stacked">Registro</ion-label>
-      <ion-input name="registro" type="text" placeholder=""  [(ngModel)]="usersAgentesaude.registro"></ion-input>
-    </ion-item>
-
-    <ion-item  *ngIf="tipousuario=='agentesaude'">
-      <ion-label position="stacked">Estado(UF)</ion-label>
-      <ion-input name="estado" type="text" placeholder=""  [(ngModel)]="usersAgentesaude.estado"></ion-input>
+    <ion-item>
+      <ion-label position="stacked">Data de Nascimento</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" placeholder="Selecio a data" [(ngModel)]="usersPaciente.datanascimento"></ion-datetime>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked">E-mail</ion-label>
-      <ion-input name="email" type="email" placeholder="E-mail"  [(ngModel)]="email"></ion-input>
+      <ion-label position="floating">Celular</ion-label>
+      <ion-input name="celular" type="text" [(ngModel)]="usersPaciente.celular"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked">Senha</ion-label>
-      <ion-input name="password" type="password" [(ngModel)]="password"></ion-input>
+      <ion-label position="floating">CEP</ion-label>
+      <ion-input name="zipcode" type="text" [(ngModel)]="usersPaciente.zipcode" (ionBlur)="getCep($event)"></ion-input>
     </ion-item>
 
-    <ion-button *ngIf="tipousuario=='paciente'" expand="block" color="primary" (click)="registerPaciente()">Cadastrar</ion-button>
-    <ion-button *ngIf="tipousuario=='agentesaude'" expand="block" color="primary" (click)="registerAgentesaude()">Cadastrar</ion-button>
+    <ion-item>
+      <ion-label position="floating">Endereço</ion-label>
+      <ion-input name="address" type="text" [(ngModel)]="usersPaciente.address"></ion-input>
+    </ion-item>
 
-  </ion-list>
-Eu </ion-content>
+    <ion-item>
+      <ion-label position="floating">Número</ion-label>
+      <ion-input name="address_number" type="text" [(ngModel)]="usersPaciente.address_number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Bairro</ion-label>
+      <ion-input name="address_district" type="text" [(ngModel)]="usersPaciente.address_district"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Cidade</ion-label>
+      <ion-input name="address_city" type="text" [(ngModel)]="usersPaciente.address_city"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Estado</ion-label>
+      <ion-select [(ngModel)]="usersPaciente.address_state" placeholder="Selecione">
+        <ion-select-option value="AC">AC</ion-select-option>
+        <ion-select-option value="AL">AL</ion-select-option>
+        <ion-select-option value="AP">AP</ion-select-option>
+        <ion-select-option value="AM">AM</ion-select-option>
+        <ion-select-option value="BA">BA</ion-select-option>
+        <ion-select-option value="CE">CE</ion-select-option>
+        <ion-select-option value="DF">DF</ion-select-option>
+        <ion-select-option value="ES">ES</ion-select-option>
+        <ion-select-option value="GO">GO</ion-select-option>
+        <ion-select-option value="MA">MA</ion-select-option>
+        <ion-select-option value="MT">MT</ion-select-option>
+        <ion-select-option value="MS">MS</ion-select-option>
+        <ion-select-option value="MG">MG</ion-select-option>
+        <ion-select-option value="PA">PA</ion-select-option>
+        <ion-select-option value="PB">PB</ion-select-option>
+        <ion-select-option value="PR">PR</ion-select-option>
+        <ion-select-option value="PE">PE</ion-select-option>
+        <ion-select-option value="PI">PI</ion-select-option>
+        <ion-select-option value="RJ">RJ</ion-select-option>
+        <ion-select-option value="RN">RN</ion-select-option>
+        <ion-select-option value="RS">RS</ion-select-option>
+        <ion-select-option value="RO">RO</ion-select-option>
+        <ion-select-option value="RR">RR</ion-select-option>
+        <ion-select-option value="SC">SC</ion-select-option>
+        <ion-select-option value="SP">SP</ion-select-option>
+        <ion-select-option value="SE">SE</ion-select-option>
+        <ion-select-option value="TO">TO</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Complemento</ion-label>
+      <ion-input name="address_complement" type="text" [(ngModel)]="usersPaciente.address_complement"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Comorbidades</ion-label>
+      <ion-textarea placeholder="Exemplo: Pressão alta, diabetes, alergia..." [(ngModel)]="usersPaciente.comorbidades"></ion-textarea>
+    </ion-item>
+
+    <div class="btn">
+      <div class="botoes">
+        <ion-button class="botao" expand="block" color="dark-green" (click)="registerPaciente()">Cadastrar</ion-button>
+        <ion-button class="botao" expand="block" color="warning" [routerLink]="['/login/']">Voltar</ion-button>
+      </div>
+    </div>
+
+</ion-content>
+
