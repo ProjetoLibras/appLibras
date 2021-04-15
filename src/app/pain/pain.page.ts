@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pain.page.scss'],
 })
 export class PainPage implements OnInit {
-  lado = 'frente';
+  lado = 'costas';
   constructor(private router: Router) { }
 
   ngOnInit() {
