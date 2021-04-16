@@ -4,60 +4,62 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Medicamentos</ion-title>
+    <ion-title>MEDICAMENTOS</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
  <!-- Formulário de Medicamento -->
-<form>
-  <!-- Linha 1 -->
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12">
-        <ion-item>
-          <ion-label position="floating">Remédio</ion-label>
-          <ion-input disabled="true"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+<ion-list>
+  <ion-item *ngFor="let medicament of medicament | async">
+    <!-- Linha 1 -->
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label class="texto" position="stacked">Remédio</ion-label>
+            <ion-input disabled="true">{{ medicament.remedio }}</ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
-    <!-- Linha 2 -->
-    <ion-row>
-      <ion-col size="12">
-        <ion-item>
-          <ion-label position="floating">Tipo</ion-label>
-          <ion-input disabled="true"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+      <!-- Linha 2 -->
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label class="texto" position="stacked">Tipo</ion-label>
+            <ion-input disabled="true">{{ medicament.tipo }}</ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
-    <!-- Linha 3 -->
-    <ion-row>
-      <ion-col size="6">
-        <ion-item>
-          <ion-label position="floating">Dosagem</ion-label>
-          <ion-input disabled="true"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col size="6">
-        <ion-item>
-        <ion-label position="floating">Horário</ion-label>
-        <ion-input disabled="true"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+      <!-- Linha 3 -->
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label class="texto" position="stacked">Dosagem</ion-label>
+            <ion-input disabled="true">{{ medicament.dosagem }}</ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+          <ion-label class="texto" position="stacked">Horário</ion-label>
+          <ion-input disabled="true">{{ medicament.horario }}</ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
-    <!-- Linha 4 -->
-    <ion-row>
-      <ion-col size="12">
-        <ion-item>
-          <ion-label position="floating">Observações</ion-label>
-          <ion-textarea disabled="true"></ion-textarea>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      <!-- Linha 4 -->
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label class="texto" position="stacked">Observação</ion-label>
+            <ion-textarea disabled="true">{{ medicament.observacao}}</ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-</form>
+  </ion-item>
+</ion-list>
 </ion-content>
