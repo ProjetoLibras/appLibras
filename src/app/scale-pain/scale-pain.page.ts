@@ -1,7 +1,8 @@
-import { ScalePain } from './../shared/scale-pain';
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PainScaleService } from '../shared/pain-scale.service';
+import { PainScaleService } from './shared/pain-scale.service';
+import { ScalePain } from './shared/scale-pain';
 
 
 @Component({
