@@ -10,11 +10,11 @@ export class UsersPaciente {
   zipcode?: string = "";
   address?: string = "";
   address_number?: string = "";
-  celular?: string;
+  contato?: string;
   address_district?: string = "";
   address_city?: string = "";
   address_state?: string = "";
   address_complement?: string = "";
   comorbidades?: string = "";
-  // tipousuario?: string  = "";
+  tipousuario?: string  = "paciente";
 }

@@ -13,7 +13,7 @@
 
     <ion-item>
       <ion-label position="stacked">CPF</ion-label>
-      <ion-input name="password" type="" placeholder="SUA SENHA SERÁ O CPF" [(ngModel)]="password" (ionBlur)="validaCPF($event)"></ion-input>
+      <ion-input name="password" type="password" placeholder="SUA SENHA SERÁ O CPF" [(ngModel)]="password" (ionBlur)="validaCPF($event)"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -64,8 +64,8 @@
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Celular</ion-label>
-      <ion-input name="celular" type="text" [(ngModel)]="usersPaciente.celular"></ion-input>
+      <ion-label position="floating">Contato</ion-label>
+      <ion-input name="contato" type="text" [(ngModel)]="usersPaciente.contato"></ion-input>
     </ion-item>
 
     <ion-item>

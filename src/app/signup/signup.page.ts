@@ -16,7 +16,7 @@ import { Observable } from 'rxjs';
 })
 export class SignupPage implements OnInit {
   usersPaciente: UsersPaciente;
-  tipousuario: string;
+  tipousuario: string="paciente";
   email: string;
   password: string;
   user: string;

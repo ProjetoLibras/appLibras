@@ -32,12 +32,12 @@ export class AuthService {
     this.afa.createUserWithEmailAndPassword(user.email, user.password);
 
 
-    // this.afa.onAuthStateChanged((users)=>{
-    //   users.updateProfile({displayName: user.name, photoURL: ''});
-    //   if(users){
-    //     this.registerUserPaciente(user, users.uid);
-    //   }
-    // })
+    this.afa.onAuthStateChanged((userProfile)=>{
+      userProfile.updateProfile({displayName: user.name, photoURL: ''});
+      if(userProfile){
+        this.registerUserPaciente(user, userProfile.uid);
+      }
+    })
   }
 
   registerUserPaciente(user: UsersPaciente, id: string){
@@ -45,9 +45,10 @@ export class AuthService {
       email,
       cartaosus,
       faixaetaria,
+      sexo,
       tiposanguineo,
       datanascimento,
-      celular,
+      contato,
       comorbidades,
       zipcode,
       address,
@@ -55,16 +56,18 @@ export class AuthService {
       address_number,
       address_city,
       address_state,
-      address_complement, } = user;
+      address_complement,
+      tipousuario, } = user;
     this.afs.collection('users').doc(id).set(
       {
         name: name,
         email: email,
         cartaosus: cartaosus,
         faixaetaria: faixaetaria,
+        sexo: sexo,
         tiposanguineo: tiposanguineo,
         datanascimento: datanascimento,
-        celular: celular,
+        contato: contato,
         comorbidades: comorbidades,
         zipcode: zipcode,
         address: address,
@@ -72,7 +75,8 @@ export class AuthService {
         address_number: address_number,
         address_city: address_city,
         address_state: address_state,
-        address_complement: address_complement
+        address_complement: address_complement,
+        tipousuario: tipousuario
       }
     )
   }
