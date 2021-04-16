@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-toolbar color="dark-green">
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <div class="topo-header-bg">
+ </div>
+
+ <div class="foto-header-bg">
+   <img src="../assets/imgs/fotousuariopadrao.png" alt=""/>
+ </div>
+
+   <div class="ion-text-center" style="margin-top: 80px;">
+    <h1>{{ users.name }}</h1>
+   </div>
+
+  <ion-item>
+    <ion-label>
+      <h2 class="text-color">Cartão SUS</h2>
+      <span>{{ users.cartaosus }}</span>
+    </ion-label>
+  </ion-item>
+
+  <ion-item >
+    <ion-label>
+      <h2 class="text-color">Tipo sanguíneo</h2>
+      <h3>{{ users.tiposanguineo }}</h3>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <h2 class="text-color">Contato</h2>
+      <h5><ion-icon name="mail-outline"></ion-icon>{{ users.email }}</h5>
+      <h5><ion-icon name="call-outline"></ion-icon>{{ users.contato }}</h5>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <h2 class="text-color">Endereço</h2>
+      <h5>{{ users.address}}</h5>
+      <h5>{{ users.address_number}}</h5>
+      <h5>{{ users.address_district}}</h5>
+      <h5>{{ users.address_city}}</h5>
+      <h5>{{ users.address_state}}</h5>
+      <h5></h5>
+    </ion-label>
+  </ion-item>
+
+  <ion-item >
+    <ion-label>
+      <h2 class="text-color">Comorbidades</h2>
+      <h3>{{ users.comorbidades }}</h3>
+    </ion-label>
+  </ion-item>
+
+  <ion-button expand="block" [routerLink]="['/editarusuarios']" color="dark-green">Editar</ion-button>
+
+  <!-- <ion-list>
+    <ion-item *ngFor="let user of users | async">
+        <ion-grid>
+            <!--grid
+            <ion-row>
+                <ion-col>
+                    <!--1-->
+                    <!-- <p>Nome Usuário</p>
+                    <!-- <span>{{ users.name}}</span>
+                </ion-col>
+                <ion-col class="name">
+                    <!--2-->
+                    <!-- <p>Nome Usuário</p>
+                    <span>{{ user.name}}</span>
+                </ion-col>
+                <ion-col>
+                    <!--3
+
+                </ion-col>
+                <ion-col>
+                    <!--4
+
+                    <ion-button class="action_buttons" color="warning">
+                        <ion-icon name="create-outline"></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <!--5-
+                    <ion-button class="action_buttons" color="danger">
+                        <ion-icon name="trash"></ion-icon>
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+
+            </ion-row>
+        </ion-grid>
+        <!--/grid -
+    </ion-item>
+</ion-list> -->
+
+
+
+</ion-content>
