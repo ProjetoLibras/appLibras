@@ -1,3 +1,4 @@
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
 import { ScalePain } from './scale-pain';
 
@@ -5,10 +6,14 @@ import { ScalePain } from './scale-pain';
   providedIn: 'root'
 })
 export class PainScaleService {
-
   painScales: ScalePain[] = []
+  private attendCollection: AngularFirestoreCollection<ScalePain>;
 
-  constructor() { }
+  constructor(
+    private afs: AngularFirestore,
+  ) {
+      this.attendCollection = this.afs.collection<ScalePain>('attend');
+    }
 
   getAll(){
     return this.painScales;
@@ -33,11 +38,26 @@ export class PainScaleService {
       }
       this.painScales.push(scalePain);
     }
-    console.log(this.painScales)
+    // console.log(this.painScales)
   }
 
   delete(id: number){
     const painScaleIndex = this.painScales.findIndex( (value) => value.id == id)
     this.painScales.splice(painScaleIndex, 1);
+  }
+
+  addAttend(uId: string, scaleP: any){
+    // console.log(scaleP)
+    const aId = this.afs.createId()
+    this.afs.collection('attend').doc(aId).set(
+      {
+        uId: uId,
+        date: new Date(),
+      }
+    );
+    scaleP.forEach( (item, indice, array) => {
+      // console.log(item, indice);
+      this.attendCollection.doc<ScalePain>(aId).collection('subAttend').add({id: item.id, pain: item.pain, scale: item.scale});
+    });
   }
 }

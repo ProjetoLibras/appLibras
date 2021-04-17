@@ -1,3 +1,4 @@
+import { AngularFireAuth } from '@angular/fire/auth';
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -15,34 +16,29 @@ export class ScalePainPage implements OnInit {
   scalePain: ScalePain;
   scale: string;
   pains: any[];
-
-
-// public painsScale = [
-//   {id: 1, scale: '', pain: ''}
-// ]
-  // Exatrair o dados da variavel e colocar no array
-  // save(){
-  //   const lastId = this.painsScale[this.painsScale.length-1].id;
-  //   this.painsScale.push({
-  //     id: lastId + 1,
-  //     pain: this.humanBody,
-  //     scale: this.scales
-  //   })
-  //   console.log(this.painsScale)
-  //   this.router.navigate(['/tabs/pain'])
-  // }
+  userId: string;
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
-              private scalePainService: PainScaleService) { }
+              private scalePainService: PainScaleService,
+              private afa: AngularFireAuth) { }
 
   ngOnInit() {
+    // Instanciando a classe
     this.scalePain = new ScalePain();
-
+    // pegar na rota o id passado
     this.humanBody = this.activatedRoute.snapshot.params['id'];
 
+    // Pegando o array para mostrar no front end
     this.pains = this.scalePainService.painScales;
+
+    // Pegar o id do usuario
+    this.afa.authState.subscribe(user => {
+      this.userId = user.uid;
+      // console.log(this.userid);
+    })
   }
+  // Salvando os dados no array
   save(){
     this.scalePain.pain = this.humanBody;
     this.scalePain.scale = this.scale;
@@ -50,12 +46,16 @@ export class ScalePainPage implements OnInit {
     this.router.navigate(['/tabs/pain'])
   }
 
+  // deleta dados do array
   remove(id: number){
     this.scalePainService.delete(id)
   }
 
-  pross(){
-    console.log(this.pains)
+  finishing(){
+      // Salvando os dados no array
+      this.save();
+      // passar o id e chamar metodo de gravar no banco
+      this.scalePainService.addAttend(this.userId, this.pains)
   }
 }
 

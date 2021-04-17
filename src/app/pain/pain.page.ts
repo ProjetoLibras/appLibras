@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pain.page.scss'],
 })
 export class PainPage implements OnInit {
-  lado = 'costas';
+  lado = 'frente';
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -22,11 +22,11 @@ export class PainPage implements OnInit {
     if (event.detail.value === 'frente') {
 
       this.lado = 'frente'
-      console.log(this.lado);
+      // console.log(this.lado);
 
     } else {
       this.lado = 'costas'
-      console.log(this.lado);
+      // console.log(this.lado);
     }
 
   }
