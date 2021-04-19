@@ -6,8 +6,13 @@ import { AuthGuard } from './shared/auth.guard';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-    // canActivate: [AuthGuard]
+    //canActivate: [AuthGuard]
   },
   {
     path: 'login',
@@ -18,12 +23,13 @@ const routes: Routes = [
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
   },
   {
+    path: 'editarusuarios',
+    loadChildren: () => import('./editarusuarios/editarusuarios.module').then( m => m.EditarusuariosPageModule)
+  },
+  {
     path: 'scale-pain/:id',
     loadChildren: () => import('./scale-pain/scale-pain.module').then( m => m.ScalePainPageModule)
   }
-
-
-
 ];
 @NgModule({
   imports: [

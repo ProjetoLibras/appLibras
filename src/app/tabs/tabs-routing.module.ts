@@ -9,6 +9,11 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
+        path: 'dashboard',
+        loadChildren: () => import('../dashboard/dashboard.module').then( m => m.DashboardPageModule)
+        //canActivate: [AuthGuard]
+      },
+      {
         path: 'pain',
         loadChildren: () => import('../pain/pain.module').then( m => m.PainPageModule)
         // canActivate: [AuthGuard]
@@ -23,7 +28,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/pain',
+        redirectTo: '/tabs/dashboard',
         pathMatch: 'full'
       }
     ]
