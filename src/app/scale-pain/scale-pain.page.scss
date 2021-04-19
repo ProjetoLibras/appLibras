@@ -1,0 +1,81 @@
+:root{
+  font-family: 'poppins' 'sans-serif';
+}
+.main{
+  width: 100%;
+  height: 100%;
+}
+.pains{
+overflow: hidden;
+}
+.scale{
+padding: 0px 5px 0px 5px;
+}
+.sem-dor{
+  border: rgba(0, 0, 0, 0.2) solid 1px;
+  border-radius: 0.3rem;
+  box-shadow: 2px 2px 2px rgb(202, 202, 202);
+}
+.pouca-dor{
+  border: rgba(0, 0, 0, 0.2) solid 1px;
+  border-radius: 0.3rem;
+  box-shadow: 2px 2px 2px rgb(202, 202, 202);
+}
+.muita-dor{
+  border: rgba(0, 0, 0, 0.2) solid 1px;
+  border-radius: 0.3rem;
+  box-shadow: 2px 2px 2px rgb(202, 202, 202);
+}
+.muita-dor p{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sem-dor p{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pouca-dor p{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttons{
+  display: flex;
+}
+.button-back p{
+  padding: 1rem;
+  margin: 0;
+
+}
+.button-back{
+  background: #0fff98;
+  width: 40%;
+  text-align: center;
+  margin: 10px;
+  border-radius: 0.4rem;
+  margin-left: 15px;
+}
+.button-ok p{
+  padding: 1rem;
+  margin: 0;
+  margin-top: 11px;
+}
+.button-ok{
+  background: #0fff98;
+  width: 40%;
+  text-align: center;
+  margin: 10px;
+  border-radius: 0.4rem;
+  margin-left: 25px;
+}
+ion-radio{
+  margin-left: 1.4rem;
+}

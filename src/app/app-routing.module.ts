@@ -25,8 +25,11 @@ const routes: Routes = [
   {
     path: 'editarusuarios',
     loadChildren: () => import('./editarusuarios/editarusuarios.module').then( m => m.EditarusuariosPageModule)
+  },
+  {
+    path: 'scale-pain/:id',
+    loadChildren: () => import('./scale-pain/scale-pain.module').then( m => m.ScalePainPageModule)
   }
-
 ];
 @NgModule({
   imports: [
