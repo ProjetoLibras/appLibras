@@ -1,0 +1,45 @@
+<ion-header>
+  <!-- Titulo da Pagina -->
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>ATENDIMENTO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<!-- Barra de Pesquisa -->
+<ion-searchbar placeholder="Pesquisar pelo Sus" (ionInput)="filterList($event)"></ion-searchbar>
+
+<!-- Embaixo de resultados irá aparecer uma listagem com informações de atendimentos, vindo do banco -->
+
+<ion-grid>
+  <ion-row>
+    <ion-col size="12">
+      <ion-title style="margin-top: 20px;">Resultados:</ion-title>
+    </ion-col>
+  </ion-row>
+
+    <ion-list>
+      <ion-item *ngFor="let attendance of attendanceList">
+        <ion-grid>
+          <ion-row>
+            <!-- <ion-button> -->
+              <ion-col size="6">
+                <span>{{ attendance.paciente }}</span>
+              </ion-col>
+              <ion-col size="6">
+                <span>{{ attendance.sus }}</span>
+              </ion-col>
+            <!-- </ion-button> -->
+          </ion-row>
+         </ion-grid>
+      </ion-item>
+    </ion-list>
+
+</ion-grid>
+
+</ion-content>
+

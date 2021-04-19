@@ -1,9 +1,50 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>symptoms-list</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Lista dos Sintomas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let symptom of symptoms | async">
+      <ion-grid> <!--grid -->
+        <ion-row>
+          <ion-col> <!--1-->
+            <ion-avatar class="ion-align-self-start" *ngIf="symptom.imgUrl">
+              <img [src]="symptom.imgUrl" alt=""/>
+            </ion-avatar>
+          </ion-col>
+          <ion-col> <!--2-->
+            <span>{{ symptom.name}}</span>
+          </ion-col>
+          <ion-col> <!--3-->
+            <ion-button color="warning" [routerLink]="['/symptoms-form/edit', symptom.id]">
+              <ion-icon name="create-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col> <!--4-->
+            <ion-button color="danger" (click)="removeSymptom(symptom)">
+              <ion-icon name="trash"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="3"> <!--1-->
+            <!-- <span [innerHTML]="symptom.description"></span> -->
+          </ion-col>
+        </ion-row>
+      </ion-grid> <!--/grid -->
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/symptoms-form/new']">
+      <ion-icon name="add-circle-outline">Adicionar</ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>
