@@ -25,5 +25,25 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-//Fontes
+
+// Font poppins
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+// Dark green
+:root {
+  --ion-color-dark-green: #0fff98;
+  --ion-color-dark-green-rgb: 15,255,152;
+  --ion-color-dark-green-contrast: #000000;
+  --ion-color-dark-green-contrast-rgb: 0,0,0;
+  --ion-color-dark-green-shade: #0de086;
+  --ion-color-dark-green-tint: #27ffa2;
+}
+
+.ion-color-dark-green {
+  --ion-color-base: var(--ion-color-dark-green);
+  --ion-color-base-rgb: var(--ion-color-dark-green-rgb);
+  --ion-color-contrast: var(--ion-color-dark-green-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-dark-green-contrast-rgb);
+  --ion-color-shade: var(--ion-color-dark-green-shade);
+  --ion-color-tint: var(--ion-color-dark-green-tint);
+}

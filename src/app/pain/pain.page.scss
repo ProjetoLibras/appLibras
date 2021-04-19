@@ -1,0 +1,351 @@
+// Corpo frente
+:root{
+  font-family: 'Poppins', sans-serif;
+}
+.content{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/imgs/CorpoFrente.svg');
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin-left: 3rem;
+  top: 3rem;
+  z-index: 2;
+}
+.body-head{
+position: absolute;
+width: 2rem;
+height: 3.5rem;
+// background: black;
+top: 1rem;
+left: 6.7rem;
+}
+.body-hand-rigth{
+position: absolute;
+width: 2rem;
+height: 2rem;
+// background: black;
+right: 8rem;
+top: 14rem;
+}
+.body-hand-left{
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  // background: black;
+  top: 14rem;
+  left: 1rem;
+}
+.body-thigh-right{
+  position: absolute;
+  width: 2rem;
+  height: 4rem;
+  // background: black;
+  bottom: 14rem;
+  right: 12.2rem;
+}
+.body-thigh-left{
+  position: absolute;
+  width: 2rem;
+  height: 4rem;
+  // background: black;
+  bottom: 14rem;
+  left: 5rem;
+}
+.body-foot-rigth{
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  // background: black;
+  bottom: 4rem;
+  right: 12rem;
+}
+.body-foot-left{
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  // background: black;
+  bottom: 4rem;
+  left: 5rem;
+}
+.body-shoulder-rigth{
+  position: absolute;
+  width: 2.5rem;
+  height: 1.2rem;
+  // background: black;
+  top: 4.5rem;
+  right: 11rem;
+}
+.body-shoulder-left{
+  position: absolute;
+  width: 2.5rem;
+  height: 1.2rem;
+  // background: black;
+  top: 4.5rem;
+  left: 4rem;
+}
+.body-forearm-rigth{
+  position: absolute;
+  width: 2rem;
+  height: 3rem;
+  // background: black;
+  top: 10.5rem;
+  right: 9rem;
+}
+.body-forearm-left{
+  position: absolute;
+  width: 2rem;
+  height: 3rem;
+  // background: black;
+  top: 10.5rem;
+  left: 2rem;
+}
+.body-arm-rigth{
+  position: absolute;
+  width: 2rem;
+  height: 3rem;
+  // background: black;
+  top: 7rem;
+  right: 10rem;
+}
+.body-arm-left{
+  position: absolute;
+  width: 2rem;
+  height: 3rem;
+  // background: black;
+  top: 7rem;
+  left: 3rem;
+}
+.body-chest-right{
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  // background: black;
+  top: 6rem;
+  right: 12.5rem;
+
+}
+.body-chest-left{
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  // background: black;
+  top: 6rem;
+  left: 5.2rem;
+}
+.body-belly{
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  // background: black;
+  top: 9rem;
+  left: 5.5rem;
+}
+.body-knee-right{
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  // background: black;
+  bottom: 11rem;
+  right: 12rem ;
+}
+.body-knee-left{
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  // background: black;
+  bottom: 11rem;
+  left: 4.7rem;
+}
+.body-leg-rigth{
+  position: absolute;
+  width: 2rem;
+  height: 3.5rem;
+  // background: black;
+  bottom: 6.7rem;
+  right: 12rem;
+}
+.body-leg-left{
+  position: absolute;
+  width: 2rem;
+  height: 3.5rem;
+  // background: black;
+  bottom: 6.7rem;
+  left: 4.7rem;
+}
+// Corpo costas
+.content-back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/imgs/Costas1.png');
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin-left: 4rem;
+  top: 3rem;
+}
+.body-back-head{
+  position: absolute;
+  width: 2rem;
+  height: 3.5rem;
+  // background: black;
+  top: 1rem;
+  left: 6rem;
+}
+.body-back-shoulder-rigth{
+  position: absolute;
+  width: 2.5rem;
+  height: 1.2rem;
+  // background: black;
+  top: 4.5rem;
+  right: 11.9rem;
+}
+.body-back-shoulder-left{
+  position: absolute;
+  width: 2.5rem;
+  height: 1.2rem;
+  // background: black;
+  top: 4.5rem;
+  left: 3.6rem;
+}
+.body-back-upper-column{
+  position: absolute;
+  width: 4rem;
+  height: 3.7rem;
+  // background: black;
+  top: 6rem;
+  left: 5rem;
+}
+.body-back-low-column{
+  position: absolute;
+  width: 4rem;
+  height: 3rem;
+  // background: black;
+  top: 10rem;
+  left: 5rem;
+}
+.body-back-arm-left{
+  position: absolute;
+  width: 2rem;
+  height: 3rem;
+  // background: black;
+  top: 6.8rem;
+  left: 2.5rem;
+}
+.body-back-arm-rigth{
+  position: absolute;
+  width: 2rem;
+  height: 3rem;
+  // background: black;
+  top: 6.8rem;
+  right: 11rem;
+}
+.body-back-forearm-rigth{
+  position: absolute;
+  width: 2rem;
+  height: 3.5rem;
+  // background: black;
+  top: 10.2rem;
+  right: 10.2rem;
+}
+.body-back-forearm-left{
+  position: absolute;
+  width: 2rem;
+  height: 3.5rem;
+  // background: black;
+  top: 10.2rem;
+  left: 1.6rem;
+}
+.body-back-hand-rigth{
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  // background: black;
+  right: 9rem;
+  top: 14rem;
+}
+.body-back-hand-left{
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  // background: black;
+  top: 14rem;
+  left: 0.5rem;
+}
+.body-back-thigh-right{
+  position: absolute;
+  width: 2rem;
+  height: 6rem;
+  // background: black;
+  bottom: 11.6rem;
+  right: 13rem;
+}
+.body-back-thigh-left{
+  position: absolute;
+  width: 2rem;
+  height: 6rem;
+  // background: black;
+  bottom: 11.6rem;
+  left: 4.4rem;
+}
+.body-back-leg-rigth{
+  position: absolute;
+  width: 2rem;
+  height: 5rem;
+  // background: black;
+  bottom: 6.4rem;
+  right: 13rem;
+}
+.body-back-leg-left{
+  position: absolute;
+  width: 2rem;
+  height: 5rem;
+  // background: black;
+  bottom: 6.4rem;
+  left: 4.3rem;
+}
+.body-back-to-heel-left{
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  // background: black;
+  bottom: 4.3rem;
+  right: 13rem;
+}
+.body-back-to-heel-rigth{
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  // background: black;
+  bottom: 4.3rem;
+  left: 4rem;
+}
+// others
+ion-title {
+  opacity: 0.7;
+}
+.modal{
+  background: var(--ion-color-dark-green);
+  height: 3rem;
+  width: 3rem;
+  position: absolute;
+  right: 5px;
+  top: 3rem;
+  border-radius: 2rem;
+
+}
+.icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+label{
+  font-size: 0.8rem;
+}
+.active{
+  display: none;
+}
+

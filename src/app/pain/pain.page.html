@@ -1,9 +1,145 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>pain</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="dark-green">
+    <ion-title class="ion-text-center">Escala de dor</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+<div class="container" *ngIf="lado == 'frente'">
+  <!-- Frente -->
+  <div class="content">
+    <!-- Superior body -->
+    <div class="body-head" [routerLink]="['/scale-pain/', 'cabeca']">
+      <!-- cabeça -->
+    </div>
+    <div class="body-hand-rigth" [routerLink]="['/scale-pain/', 'mão direita']">
+      <!-- mão direito -->
+    </div>
+    <div class="body-hand-left" [routerLink]="['/scale-pain/', 'mão esquerda']">
+      <!-- mão esquerdo -->
+    </div>
+    <div class="body-arm-rigth" [routerLink]="['/scale-pain/', 'braço direito']">
+      <!-- braço direito -->
+    </div>
+    <div class="body-arm-left" [routerLink]="['/scale-pain/', 'braço esquerdo']">
+      <!-- braço esquerdo -->
+    </div>
+    <div class="body-forearm-rigth" [routerLink]="['/scale-pain/', 'ante-braço direito']">
+      <!-- Ante braço direito -->
+    </div>
+    <div class="body-forearm-left" [routerLink]="['/scale-pain/', 'ante-braço esquerdo']">
+      <!-- ante braço esquerdo -->
+    </div>
+    <div class="body-shoulder-rigth" [routerLink]="['/scale-pain/', 'ombro esquerdo']">
+      <!-- ombro esquerdo -->
+    </div>
+    <div class="body-shoulder-left" [routerLink]="['/scale-pain/', 'ombro direito']">
+      <!-- ombro direito -->
+    </div>
+    <div class="body-chest-right" [routerLink]="['/scale-pain/', 'peito esquerdo']">
+      <!-- peito esquerdo -->
+    </div>
+    <div class="body-chest-left" [routerLink]="['/scale-pain/', 'peito esquerdo']">
+      <!-- peito esquerdo -->
+    </div>
+    <div class="body-belly" [routerLink]="['/scale-pain/', 'barriga']">
+      <!-- barriga -->
+    </div>
+    <!-- Inferior body -->
+    <div class="body-thigh-right" [routerLink]="['/scale-pain/', 'coxa direita']">
+      <!-- coxa direita -->
+    </div>
+    <div class="body-thigh-left" [routerLink]="['/scale-pain/', 'coxa esquerda']">
+      <!-- coxa esquerda -->
+    </div>
+    <div class="body-foot-rigth" [routerLink]="['/scale-pain/', 'pé esquerdo']">
+      <!-- pé direito -->
+    </div>
+    <div class="body-foot-left" [routerLink]="['/scale-pain/', 'pé direito']">
+      <!-- pé esquerdo -->
+    </div>
+    <div class="body-knee-right" [routerLink]="['/scale-pain/', 'joelho direito']">
+      <!-- joelho direito -->
+    </div>
+    <div class="body-knee-left" [routerLink]="['/scale-pain/', 'joelho esquerdo']">
+      <!-- joelho esquerdo -->
+    </div>
+    <div class="body-leg-rigth" [routerLink]="['/scale-pain/', 'perna direita']">
+      <!-- perna direito -->
+    </div>
+    <div class="body-leg-left" [routerLink]="['/scale-pain/', 'perna esquerda']">
+      <!-- perna esquerdo -->
+    </div>
+  </div>
+</div>
+<!-- costas -->
+<div class="container" *ngIf="lado == 'costas'">
+  <!-- Frente -->
+  <div class="content-back">
+    <!-- Superior body -->
+    <div class="body-back-head" [routerLink]="['/scale-pain/', 'nuca']">
+      <!-- cabeça atras -->
+    </div>
+    <div class="body-back-hand-rigth" [routerLink]="['/scale-pain/', 'mão direita']">
+      <!-- mão direito atras -->
+    </div>
+    <div class="body-back-hand-left" [routerLink]="['/scale-pain/', 'mão esquerda']">
+      <!-- mão esquerdo atras -->
+    </div>
+    <div class="body-back-arm-rigth" [routerLink]="['/scale-pain/', 'braço direito']">
+      <!-- braço direito atras -->
+    </div>
+    <div class="body-back-arm-left" [routerLink]="['/scale-pain/', 'braço esquerdo']">
+      <!-- braço esquerdo atras -->
+    </div>
+    <div class="body-back-forearm-rigth" [routerLink]="['/scale-pain/', 'ante-braço direito']">
+      <!-- Ante braço direito atras -->
+    </div>
+    <div class="body-back-forearm-left" [routerLink]="['/scale-pain/', 'ante-braço esquerdo']">
+      <!-- ante braço esquerdo atras -->
+    </div>
+    <div class="body-back-shoulder-rigth" [routerLink]="['/scale-pain/', 'ombro esquerdo']">
+      <!-- ombro esquerdo atras -->
+    </div>
+    <div class="body-back-shoulder-left" [routerLink]="['/scale-pain/', 'ombro direito']">
+      <!-- ombro direito atras -->
+    </div>
+    <div class="body-back-upper-column" [routerLink]="['/scale-pain/', 'coluna superior']">
+      <!-- coluna superior atras -->
+    </div>
+    <div class="body-back-low-column" [routerLink]="['/scale-pain/', 'Coluna inferior']">
+      <!-- culuna inferior atras -->
+    </div>
+    <!-- Inferior body -->
+    <div class="body-back-thigh-left" [routerLink]="['/scale-pain/', 'coxa direita']">
+      <!-- coxa direita atras -->
+    </div>
+    <div class="body-back-thigh-right" [routerLink]="['/scale-pain/', 'coxa esquerda']">
+      <!-- coxa esquerda atras -->
+    </div>
+    <div class="body-back-to-heel-rigth" [routerLink]="['/scale-pain/', 'calcanhar esquerdo']">
+      <!-- calcanhar esquerdo atras -->
+    </div>
+    <div class="body-back-to-heel-left" [routerLink]="['/scale-pain/', 'calcanhar direito']">
+      <!-- calcanhar direito atras -->
+    </div>
+    <div class="body-back-leg-rigth" [routerLink]="['/scale-pain/', 'perna direita']">
+      <!-- perna direito atras -->
+    </div>
+    <div class="body-back-leg-left" [routerLink]="['/scale-pain/', 'perna esquerda']">
+      <!-- perna esquerdo atras -->
+    </div>
+  </div>
+</div>
+<div class="select">
+  <!-- <ion-segment [(ngModel)]="lado" color="dark-green"> -->
+  <ion-segment (ionChange)="segmentChanged($event)" color="dark-green">
+    <ion-segment-button value="frente">
+      <ion-label>Frente</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="costas">
+      <ion-label>Costas</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</div>
 </ion-content>
