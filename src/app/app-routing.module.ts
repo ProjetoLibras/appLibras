@@ -16,7 +16,12 @@ const routes: Routes = [
   {
     path: 'signup',
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+  },
+  {
+    path: 'scale-pain/:id',
+    loadChildren: () => import('./scale-pain/scale-pain.module').then( m => m.ScalePainPageModule)
   }
+
 
 
 ];
