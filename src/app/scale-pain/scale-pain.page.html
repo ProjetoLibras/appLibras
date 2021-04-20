@@ -80,7 +80,7 @@
     </div>
   </div>
   <div class="buttons">
-    <div class="button-back" (click)="save()">
+    <div class="button-back" [routerLink]="['/tabs/pain']" (click)="save()">
       <p>Adicionar <br> mais</p>
     </div>
     <div class="button-ok" [routerLink]="['/tabs/symptoms']" (click)="finishing()">
