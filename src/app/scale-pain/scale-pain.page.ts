@@ -37,13 +37,14 @@ export class ScalePainPage implements OnInit {
       this.userId = user.uid;
       // console.log(this.userid);
     })
+    this.save()
   }
   // Salvando os dados no array
   save(){
     this.scalePain.pain = this.humanBody;
     this.scalePain.scale = this.scale;
     this.scalePainService.save(this.scalePain);
-    this.router.navigate(['/tabs/pain'])
+    // this.router.navigate(['/tabs/pain'])
   }
 
   // deleta dados do array
