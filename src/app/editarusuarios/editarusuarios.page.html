@@ -4,38 +4,64 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+  <ion-content>
+  <form (ngSubmit)="onSubmit()">
 
-  <!-- <ion-item>
-    <ion-label class="form-control-label">Imagem</ion-label>
-    <ion-input type="file" accept="image/png,image/jpeg"></ion-input>
-  </ion-item> -->
-  <ion-item class="form-group">
-    <img src="../assets/imgs/fotousuariopadrao.png" class="img-thumbnail d-block" style="max-width: 100px;"/>
-    <ion-button expand="block" color="warning">
-      <ion-icon slot="start" name="add-outline"></ion-icon> Adicionar Imagem
-    </ion-button>
-  </ion-item>
+    <ion-item *ngIf="Users.imgUrl==''">
+      <img *ngIf="Users.imgUrl==''" src="../assets/imgs/fotousuariopadrao.png" alt="" class="img-thumbnail d-block" style="max-width: 100px;"/>
+      <ion-input color="warning" type="file" accept="image/png,image/jpeg" (change)="upload($event)">
+        <!-- <ion-icon name="add-outline"></ion-icon> -->
+      </ion-input>
+    </ion-item>
+
+    <ion-item [hidden]="!hasImg">
+      <img src="{{Users.imgUrl}}" alt="" class="img-thumbnail d-block" style="max-width: 100px;" [hidden]="!hasImg"/>
+      <ion-button color="danger"  (click)="removerImg(userid, filePath)" [hidden]="!hasImg">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
 
   <ion-item>
     <ion-label position="stacked">Nome completo</ion-label>
-    <ion-input placeholder="Tatiana Tivo Redondo"></ion-input>
+    <ion-input name="name" type="text"  placeholder="" [(ngModel)]="Users.name"></ion-input>
   </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Sexo</ion-label>
+    <ion-select placeholder="">
+      <ion-select-option value="masculino">Masculino</ion-select-option>
+      <ion-select-option value="feminino">Feminino</ion-select-option>
+    </ion-select>
+  </ion-item>
+
   <ion-item>
     <ion-label position="stacked">Data de nascimento</ion-label>
-    <ion-input type="number" placeholder="10/03/2003"></ion-input>
+    <ion-input name="datenaciemnto" placeholder="" [(ngModel)]="Users.datanascimento"></ion-input>
   </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Faixa Etária</ion-label>
+    <ion-select placeholder="">
+      <ion-select-option value="Criança">Criança</ion-select-option>
+      <ion-select-option value="Joven">Jovem</ion-select-option>
+      <ion-select-option value="Adulto">Adulto</ion-select-option>
+      <ion-select-option value="Idoso">Idoso</ion-select-option>
+    </ion-select>
+  </ion-item>
+
   <ion-item>
     <ion-label position="stacked">E-mail</ion-label>
-    <ion-input type="email" placeholder="tati@gmail.com"></ion-input>
+    <ion-input name="email" type="email" placeholder="" [(ngModel)]="Users.email"></ion-input>
   </ion-item>
+
   <ion-item>
-    <ion-label position="stacked">CPF</ion-label>
-    <ion-input type="number">470722644-39</ion-input>
+    <ion-label position="stacked">Cartão SUS</ion-label>
+    <ion-input name="cartaosus" [(ngModel)]="Users.cartaosus"></ion-input>
   </ion-item>
+
   <ion-item>
     <ion-label position="stacked">Tipo sanguíneo</ion-label>
-    <ion-select placeholder="AB-">
+    <ion-select placeholder="">
       <ion-select-option value="Selecione">Selecione</ion-select-option>
       <ion-select-option value="A+">A+</ion-select-option>
       <ion-select-option value="A-">A-</ion-select-option>
@@ -47,37 +73,45 @@
       <ion-select-option value="O-">O-</ion-select-option>
     </ion-select>
   </ion-item>
+
   <ion-item>
     <ion-label position="stacked">Contato</ion-label>
-    <ion-input type="number" placeholder="1999234643"></ion-input>
+    <ion-input name="contato" type="number" placeholder="" [(ngModel)]="Users.contato"></ion-input>
   </ion-item>
+
   <ion-item>
     <ion-label position="stacked">CEP</ion-label>
-    <ion-input type="number" placeholder="13426632"></ion-input>
+    <ion-input name="cep" type="number" placeholder="" [(ngModel)]="Users.zipcode"></ion-input>
   </ion-item>
+
   <ion-item>
     <ion-label position="stacked">Endereço</ion-label>
-    <ion-input type="text" placeholder="Rua Aster"></ion-input>
+    <ion-input name="endereço" type="text" placeholder="" [(ngModel)]="Users.address"></ion-input>
   </ion-item>
+
   <ion-item>
     <ion-label position="stacked">Numero</ion-label>
-    <ion-input type="number" placeholder="109"></ion-input>
+    <ion-input name="numero" type="number" placeholder="" [(ngModel)]="Users.address_number"></ion-input>
   </ion-item>
+
   <ion-item>
     <ion-label position="stacked">Bairro</ion-label>
-    <ion-input type="text" placeholder="Sebastiao"></ion-input>
+    <ion-input name="bairro" type="text" placeholder="" [(ngModel)]="Users.address_district"></ion-input>
   </ion-item>
+
   <ion-item>
     <ion-label position="stacked">Cidade</ion-label>
-    <ion-input type="text" placeholder="Campinas"></ion-input>
+    <ion-input name="cidade" type="text" placeholder="" [(ngModel)]="Users.address_city"></ion-input>
   </ion-item>
+
   <ion-item>
     <ion-label position="stacked">Complemento</ion-label>
-    <ion-input type="number" placeholder=""></ion-input>
+    <ion-input name="complemento" type="number" placeholder="" [(ngModel)]="Users.address_complement"></ion-input>
   </ion-item>
+
   <ion-item>
   <ion-label position="stacked">Estado</ion-label>
-    <ion-select placeholder="SP">
+    <ion-select placeholder="">
       <ion-select-option value="AC">AC</ion-select-option>
       <ion-select-option value="AL">AL</ion-select-option>
       <ion-select-option value="AP">AP</ion-select-option>
@@ -107,12 +141,14 @@
       <ion-select-option value="DF">DF</ion-select-option>
     </ion-select>
   </ion-item>
+
   <ion-item>
     <ion-label position="stacked">Comorbidades</ion-label>
-    <ion-input type="text" placeholder="Diabetes"></ion-input>
+    <ion-input name="comorbidades" type="text" placeholder="" [(ngModel)]="Users.comorbidades"></ion-input>
   </ion-item>
-
-
-  <ion-button expand="block" [routerLink]="['/tabs/dashboard']" color="dark-green">Salvar</ion-button>
-
+</form>
+<div class="botoes">
+  <ion-button class="botao" id="salvar" expand="block" type="submit" [routerLink]="['/tabs/dashboard']" color="dark-green" (click)="onSubmit()">Salvar</ion-button>
+  <ion-button class="botao" expand="block" [routerLink]="['/tabs/dashboard']" color="danger">Cancelar</ion-button>
+</div>
 </ion-content>
