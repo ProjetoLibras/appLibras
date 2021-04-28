@@ -12,7 +12,7 @@ export class DashboardPage{
   username: string;
   userid: string;
   users: User;
-
+  hasImg: boolean = false;
 
   constructor (
     private dashboardservice: DashboardService,
@@ -44,6 +44,7 @@ export class DashboardPage{
         this.users.comorbidades = data.comorbidades == null ? "" : data.comorbidades;
         this.users.filePath = data.filePath == null ? "" : data.filePath;
         this.users.imgUrl = data.imgUrl == null ? "" : data.imgUrl;
+        this.hasImg = this.users.imgUrl == '' ? true : false;
       });
       }
     })

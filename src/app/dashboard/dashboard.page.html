@@ -5,7 +5,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
-    <ion-title>Dashboard</ion-title>
+    <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,8 +13,12 @@
  <div class="topo-header-bg">
  </div>
 
- <div class="foto-header-bg">
-   <img src="../assets/imgs/fotousuariopadrao.png" alt=""/>
+ <div *ngIf="users.imgUrl==''" class="foto-header-bg">
+  <img *ngIf="users.imgUrl==''" src="../assets/imgs/fotousuariopadrao.png"/>
+</div>
+
+ <div class="foto-header-bg" [hidden]="hasImg">
+  <img src="{{ users.imgUrl }}" alt=""[hidden]="hasImg"/>
  </div>
 
    <div class="ion-text-center" style="margin-top: 80px;">
@@ -46,11 +50,11 @@
   <ion-item>
     <ion-label>
       <h2 class="text-color">Endereço</h2>
-      <h5>{{ users.address}}</h5>
-      <h5>{{ users.address_number}}</h5>
-      <h5>{{ users.address_district}}</h5>
-      <h5>{{ users.address_city}}</h5>
-      <h5>{{ users.address_state}}</h5>
+      <h5>{{ users.address }}</h5>
+      <h5>{{ users.address_number }}</h5>
+      <h5>{{ users.address_district }}</h5>
+      <h5>{{ users.address_city }}</h5>
+      <h5>{{ users.address_state }}</h5>
       <h5></h5>
     </ion-label>
   </ion-item>
