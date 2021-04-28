@@ -1,3 +1,4 @@
+import { UserPiece } from './shared/user-piece';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 import { Component, OnInit } from '@angular/core';
@@ -17,6 +18,7 @@ export class ScalePainPage implements OnInit {
   scale: string;
   pains: any[];
   userId: string;
+  userPice: UserPiece;
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
@@ -24,18 +26,34 @@ export class ScalePainPage implements OnInit {
               private afa: AngularFireAuth) { }
 
   ngOnInit() {
+    // chamando metodo para pegar id
+    this.getId()
     // Instanciando a classe
     this.scalePain = new ScalePain();
+    // Instanciando a classe
+    this.userPice = new UserPiece;
     // pegar na rota o id passado
     this.humanBody = this.activatedRoute.snapshot.params['id'];
 
     // Pegando o array para mostrar no front end
     this.pains = this.scalePainService.painScales;
 
+    this.save()
+  }
+   async getUserPiece(){
+    const subscribe = await this.scalePainService.getUserForId(this.userId).subscribe( (data: any) =>{
+      subscribe.unsubscribe();
+      const { name, cartaosus } = data;
+      this.userPice.name = name;
+      this.userPice.cartaosus = cartaosus;
+    })
+  }
+  getId(){
     // Pegar o id do usuario
     this.afa.authState.subscribe(user => {
       this.userId = user.uid;
-      // console.log(this.userid);
+      // chamando o metodo de pergar ususuario
+      this.getUserPiece()
     })
   }
   // Salvando os dados no array
@@ -43,7 +61,7 @@ export class ScalePainPage implements OnInit {
     this.scalePain.pain = this.humanBody;
     this.scalePain.scale = this.scale;
     this.scalePainService.save(this.scalePain);
-    this.router.navigate(['/tabs/pain'])
+    // this.router.navigate(['/tabs/pain'])
   }
 
   // deleta dados do array
@@ -55,8 +73,8 @@ export class ScalePainPage implements OnInit {
       // Salvando os dados no array
       this.save();
       // passar o id e chamar metodo de gravar no banco
-      this.scalePainService.addAttend(this.userId, this.pains)
-  }
+      this.scalePainService.addAttend(this.userId, this.pains, this.userPice)
+    }
 }
 
 
