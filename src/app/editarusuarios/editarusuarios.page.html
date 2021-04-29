@@ -16,7 +16,7 @@
 
     <ion-item [hidden]="!hasImg">
       <img src="{{Users.imgUrl}}" alt="" class="img-thumbnail d-block" style="max-width: 100px;" [hidden]="!hasImg"/>
-      <ion-button color="danger"  (click)="removerImg(userid, filePath)" [hidden]="!hasImg">
+      <ion-button color="danger"  (click)="removerImg(userid, Users.filePath)" [hidden]="!hasImg">
         <ion-icon name="trash"></ion-icon>
       </ion-button>
     </ion-item>

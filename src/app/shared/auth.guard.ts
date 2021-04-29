@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, take, tap } from 'rxjs/operators';
+import { AuthService } from './auth.service';
 import { ToastService } from './toast.service';
 
 @Injectable({
@@ -15,6 +16,7 @@ export class AuthGuard implements CanActivate {
   constructor(
     private router: Router,
     private afa: AngularFireAuth,
+    private authService: AuthService,
     private toast: ToastService
   ){}
 
@@ -31,15 +33,18 @@ export class AuthGuard implements CanActivate {
           this.router.navigate(['/login']);
           this.toast.showMessageTop('Usuário não logado!!!', 'warning');
         }
-        // else {
-        //   //
-        //   this.afa.authState.subscribe(user =>{
-        //     this.userid = user.uid;
-        //     this.username = user.displayName;
-        //     console.log(this.userid);
-        //     console.log(this.username)
-        //   })
-        // }
+        else {
+          this.afa.authState.subscribe(user =>{
+            if (user.uid) {
+            this.authService.getById(user.uid).subscribe( (data: any) =>{
+              if (data.tipousuario =='agentesaude'){
+                this.router.navigate(['/login']);
+                this.toast.showMessageTop('Usuário Agente de Saúde sem permissão!!!', 'danger');
+              }
+            })
+          }
+          })
+        }
 
       })
     )

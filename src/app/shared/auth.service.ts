@@ -3,21 +3,27 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Injectable } from '@angular/core';
 import { UsersPaciente } from './../users/shared/users-paciente';
 import { Login } from './../users/shared/login';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private usersCollection: AngularFirestoreCollection<UsersPaciente>;
 
   private user: string;
   constructor(
     private afa: AngularFireAuth,
     private afs: AngularFirestore,
     private router: Router
-  ) { }
+  ) {
+    this.usersCollection = this.afs.collection<UsersPaciente>('users');
 
+  }
 
+  getById(id: string) { // buscar por Id
+    return this.usersCollection.doc<UsersPaciente>(id).valueChanges();
+  }
   login(login: Login){
     return this.afa.signInWithEmailAndPassword(login.email, login.password)
   }

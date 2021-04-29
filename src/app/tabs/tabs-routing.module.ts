@@ -10,13 +10,13 @@ const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        loadChildren: () => import('../dashboard/dashboard.module').then( m => m.DashboardPageModule)
-        //canActivate: [AuthGuard]
+        loadChildren: () => import('../dashboard/dashboard.module').then( m => m.DashboardPageModule),
+        canActivate: [AuthGuard]
       },
       {
         path: 'pain',
-        loadChildren: () => import('../pain/pain.module').then( m => m.PainPageModule)
-        // canActivate: [AuthGuard]
+        loadChildren: () => import('../pain/pain.module').then( m => m.PainPageModule),
+        canActivate: [AuthGuard]
       },
       {
         path: 'symptoms',
