@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AlertService } from '../shared/alert.service';
 import { ToastService } from '../shared/toast.service';
@@ -14,15 +15,19 @@ export class SymptomsPage implements OnInit {
   symptom: Symptoms;
   symptomSelect: Symptoms[] = []
   symptomSelected: Symptoms[] = []
-
+  aId: string;
+  data: any;
   symptoms: Observable<any[]>;
   constructor(private symptomsService:SymptomsService,
               private toast:ToastService,
-              private alert:AlertService) { }
+              private alert:AlertService,
+              private activatedRoute: ActivatedRoute) { }
 
-  ngOnInit() {
+    ngOnInit() {
     this.getAll();
     this.symptom = new Symptoms();
+    // pegar o id do usuario
+    this.aId = this.activatedRoute.snapshot.params['id'];
   }
 
   getAll(){
@@ -50,13 +55,8 @@ export class SymptomsPage implements OnInit {
     this.symptomSelected.splice(symptomIndex, 1);
   }
 
-  // Service
-  // save(id:string, symptom: string){
-  //   this.symptomsService.save(id,symptom);
-  // }
-
-  // remove(symptomSelected: any){
-  //   this.symptomsService.delete(symptomSelected)
-  // }
+  finishing(){
+    this.symptomsService.addSymptom(this.aId, this.symptomSelected);
+  }
 
 }

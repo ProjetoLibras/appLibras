@@ -83,5 +83,7 @@ export class PainScaleService {
       // console.log(item, indice);
       this.attendCollection.doc<ScalePain>(aId).collection('subAttend').add({id: item.id, pain: item.pain, scale: item.scale});
     });
+
+    return aId
   }
 }

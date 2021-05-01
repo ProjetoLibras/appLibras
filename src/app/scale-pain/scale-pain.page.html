@@ -1,91 +1,91 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar color="dark-green">
-    <ion-title class="ion-text-center">Escala</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="dark-green">
+        <ion-title class="ion-text-center">Escala</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<div class="main">
-  <div class="pains">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Dores</ion-card-title>
-      </ion-card-header>
+    <div class="main">
+        <div class="pains">
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>Dores</ion-card-title>
+                </ion-card-header>
 
-      <ion-card-content>
-        <div *ngFor="let p of pains">
-          <ion-grid>
-            <ion-row>
-              <ion-col size="6">
-                <span>{{p.pain}}  {{p.scale}}</span>
-              </ion-col>
-              <ion-col size="2">
-                <ion-icon name="trash-sharp" color="danger" (click)="remove(p.id)"></ion-icon>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
+                <ion-card-content>
+                    <div *ngFor="let p of pains">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col size="6">
+                                    <span>{{p.pain}}  {{p.scale}}</span>
+                                </ion-col>
+                                <ion-col size="2">
+                                    <ion-icon name="trash-sharp" color="danger" (click)="remove(p.id)"></ion-icon>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </div>
+                </ion-card-content>
+            </ion-card>
         </div>
-      </ion-card-content>
-    </ion-card>
-  </div>
-  <div class="scale">
-    <ion-text color="">
-      <h5 class="ion-text-center">De 0 a 10 escolha o grau de dor</h5>
-    </ion-text>
-    <div class="scale-select">
-      <ion-list>
-        <ion-radio-group [(ngModel)]="scale">
-          <ion-grid>
-            <ion-row>
-              <ion-col>
-                <div class="sem-dor">
-                  <img src="/assets/imgs/semDor.png" alt="Sem dor">
-                  <ion-text color="primary">
-                    <p>Sem dor</p>
-                    <p>0</p>
-                  </ion-text>
-                  <ion-item>
-                    <ion-radio slot="" value="0"></ion-radio>
-                  </ion-item>
-                </div>
-              </ion-col>
-              <ion-col>
-                <div class="pouca-dor">
-                  <img src="/assets/imgs/poucaDor.png" alt="Pouca dor">
-                  <ion-text color="warning">
-                    <p>Pouca dor</p>
-                    <p>5</p>
-                  </ion-text>
-                  <ion-item>
-                    <ion-radio value="5"></ion-radio>
-                  </ion-item>
-                </div>
-              </ion-col>
-              <ion-col>
-                <div class="muita-dor">
-                  <img src="/assets/imgs/muitaDor.png" alt="Muita dor">
-                  <ion-text color="danger">
-                    <p>Muita dor</p>
-                    <p>10</p>
-                  </ion-text>
-                  <ion-item>
-                    <ion-radio value="10"></ion-radio>
-                  </ion-item>
-                </div>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-radio-group>
-      </ion-list>
+        <div class="scale">
+            <ion-text color="">
+                <h5 class="ion-text-center">De 0 a 10 escolha o grau de dor</h5>
+            </ion-text>
+            <div class="scale-select">
+                <ion-list>
+                    <ion-radio-group [(ngModel)]="scale">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col>
+                                    <div class="sem-dor">
+                                        <img src="/assets/imgs/semDor.png" alt="Sem dor">
+                                        <ion-text color="primary">
+                                            <p>Sem dor</p>
+                                            <p>0</p>
+                                        </ion-text>
+                                        <ion-item>
+                                            <ion-radio slot="" value="0"></ion-radio>
+                                        </ion-item>
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <div class="pouca-dor">
+                                        <img src="/assets/imgs/poucaDor.png" alt="Pouca dor">
+                                        <ion-text color="warning">
+                                            <p>Pouca dor</p>
+                                            <p>5</p>
+                                        </ion-text>
+                                        <ion-item>
+                                            <ion-radio value="5"></ion-radio>
+                                        </ion-item>
+                                    </div>
+                                </ion-col>
+                                <ion-col>
+                                    <div class="muita-dor">
+                                        <img src="/assets/imgs/muitaDor.png" alt="Muita dor">
+                                        <ion-text color="danger">
+                                            <p>Muita dor</p>
+                                            <p>10</p>
+                                        </ion-text>
+                                        <ion-item>
+                                            <ion-radio value="10"></ion-radio>
+                                        </ion-item>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-radio-group>
+                </ion-list>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="button-back" [routerLink]="['/tabs/pain']" (click)="save()">
+                <p>Adicionar <br> mais</p>
+            </div>
+            <div class="button-ok" (click)="finishing()">
+                <p>Prosseguir</p>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="buttons">
-    <div class="button-back" [routerLink]="['/tabs/pain']" (click)="save()">
-      <p>Adicionar <br> mais</p>
-    </div>
-    <div class="button-ok" [routerLink]="['/tabs/symptoms']" (click)="finishing()">
-      <p>Prosseguir</p>
-    </div>
-  </div>
-</div>
 </ion-content>
