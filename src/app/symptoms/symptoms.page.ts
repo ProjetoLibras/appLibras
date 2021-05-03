@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AlertService } from '../shared/alert.service';
 import { ToastService } from '../shared/toast.service';
@@ -18,24 +18,25 @@ export class SymptomsPage implements OnInit {
   aId: string;
   data: any;
   symptoms: Observable<any[]>;
-  constructor(private symptomsService:SymptomsService,
-              private toast:ToastService,
-              private alert:AlertService,
-              private activatedRoute: ActivatedRoute) { }
+  constructor(private symptomsService: SymptomsService,
+    private toast: ToastService,
+    private alert: AlertService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute) { }
 
-    ngOnInit() {
+  ngOnInit() {
     this.getAll();
     this.symptom = new Symptoms();
     // pegar o id do usuario
     this.aId = this.activatedRoute.snapshot.params['id'];
   }
 
-  getAll(){
+  getAll() {
     this.symptoms = this.symptomsService.getAll();
   }
 
-  onClick(id:string){
-    const subscribe = this.symptomsService.getById(id).subscribe( (data: any) =>{
+  onClick(id: string) {
+    const subscribe = this.symptomsService.getById(id).subscribe((data: any) => {
       subscribe.unsubscribe();
       const { name, idname, description, imgUrl, filePath } = data;
       this.symptom.id = id;
@@ -44,7 +45,7 @@ export class SymptomsPage implements OnInit {
       this.symptom = data;
       // service
       // this.save(id, this.symptom.name);
-      this.symptomSelected.push({id:id, name:this.symptom.name});
+      this.symptomSelected.push({ id: id, name: this.symptom.name });
       console.log(this.symptomSelected)
     })
 
@@ -55,8 +56,23 @@ export class SymptomsPage implements OnInit {
     this.symptomSelected.splice(symptomIndex, 1);
   }
 
-  finishing(){
+  finishing() {
     this.symptomsService.addSymptom(this.aId, this.symptomSelected);
+
+    //LIMPAR ARRAY
+    this.symptomSelected.length = 0;
+
+    //MOSTRAR  ARRAY NO LOG SE FOI LIMPO
+    console.log(this.symptomSelected)
+
+    //Mostrar Toast
+    this.toast.showMessageBottom('Atendimento Finalizado', 'dark-green');
+
+
+    //DIRECIONAR PARA PÁGINA DE SYMPTOMS
+    this.router.navigate(['/tabs/pain']);
+    
+
   }
 
 }

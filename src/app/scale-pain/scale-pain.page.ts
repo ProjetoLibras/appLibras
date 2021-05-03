@@ -22,9 +22,9 @@ export class ScalePainPage implements OnInit {
   userPice: UserPiece;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private router: Router,
-              private scalePainService: PainScaleService,
-              private afa: AngularFireAuth) { }
+    private router: Router,
+    private scalePainService: PainScaleService,
+    private afa: AngularFireAuth) { }
 
   ngOnInit() {
     // chamando metodo para pegar id
@@ -41,15 +41,15 @@ export class ScalePainPage implements OnInit {
 
     this.save()
   }
-   async getUserPiece(){
-    const subscribe = await this.scalePainService.getUserForId(this.userId).subscribe( (data: any) =>{
+  async getUserPiece() {
+    const subscribe = await this.scalePainService.getUserForId(this.userId).subscribe((data: any) => {
       subscribe.unsubscribe();
       const { name, cartaosus } = data;
       this.userPice.name = name;
       this.userPice.cartaosus = cartaosus;
     })
   }
-  getId(){
+  getId() {
     // Pegar o id do usuario
     this.afa.authState.subscribe(user => {
       this.userId = user.uid;
@@ -58,7 +58,7 @@ export class ScalePainPage implements OnInit {
     })
   }
   // Salvando os dados no array
-  save(){
+  save() {
     this.scalePain.pain = this.humanBody;
     this.scalePain.scale = this.scale;
     this.scalePainService.save(this.scalePain);
@@ -66,18 +66,27 @@ export class ScalePainPage implements OnInit {
   }
 
   // deleta dados do array
-  remove(id: number){
+  remove(id: number) {
     this.scalePainService.delete(id)
   }
 
-  finishing(){
-      // Salvando os dados no array
-      this.save();
-      // passar o id e chamar metodo de gravar no banco
-      this.aId = this.scalePainService.addAttend(this.userId, this.pains, this.userPice)
-      this.router.navigate(['/tabs/symptoms', this.aId]);
-      console.log(this.aId)
-    }
+  finishing() {
+    // Salvando os dados no array
+    this.save();
+    // passar o id e chamar metodo de gravar no banco
+    this.aId = this.scalePainService.addAttend(this.userId, this.pains, this.userPice)
+
+    //Excluir Array
+    this.pains.length = 0;
+
+    //MOSTRAR  ARRAY NO LOG SE FOI LIMPO
+    console.log(this.pains)
+
+ 
+    //DIRECIONAR PARA PÁGINA DE SYMPTOMS
+    this.router.navigate(['/tabs/symptoms', this.aId]);
+    console.log(this.aId)
+  }
 }
 
 
