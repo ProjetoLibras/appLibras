@@ -17,6 +17,7 @@ export class ScalePainPage implements OnInit {
   scalePain: ScalePain;
   scale: string;
   pains: any[];
+  aId: string;
   userId: string;
   userPice: UserPiece;
 
@@ -73,7 +74,9 @@ export class ScalePainPage implements OnInit {
       // Salvando os dados no array
       this.save();
       // passar o id e chamar metodo de gravar no banco
-      this.scalePainService.addAttend(this.userId, this.pains, this.userPice)
+      this.aId = this.scalePainService.addAttend(this.userId, this.pains, this.userPice)
+      this.router.navigate(['/tabs/symptoms', this.aId]);
+      console.log(this.aId)
     }
 }
 

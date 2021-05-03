@@ -1,52 +1,52 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar color="dark-green">
-    <ion-title class="ion-text-center">Selecionar Sintomas</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="dark-green">
+        <ion-title class="ion-text-center">Selecionar Sintomas</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Sintomas Selecinados</ion-card-title>
-    </ion-card-header>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Sintomas Selecinados</ion-card-title>
+        </ion-card-header>
 
-    <ion-card-content>
-      <div *ngFor="let s of symptomSelected">
-        <ion-grid>
-          <ion-row>
-            <ion-col size="6">
-              <span>  {{s.name}}</span>
+        <ion-card-content>
+            <div *ngFor="let s of symptomSelected">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="6">
+                            <span>  {{s.name}}</span>
+                        </ion-col>
+                        <ion-col size="2">
+                            <ion-icon name="trash-sharp" color="danger" (click)="delete(s)"></ion-icon>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col *ngFor="let symptom of symptoms | async" size="4">
+                <ion-avatar class="ion-align-items-center" *ngIf="symptom.imgUrl">
+                    <img (click)="onClick(symptom.id)" [src]="symptom.imgUrl" alt="" id="{{symptom.idname}}">
+                </ion-avatar>
+                <ion-item>
+                    <span>{{ symptom.name}} </span>
+                </ion-item>
             </ion-col>
-            <ion-col size="2">
-              <ion-icon name="trash-sharp" color="danger" (click)="delete(s)"></ion-icon>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </div>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-grid>
-      <ion-row>
-          <ion-col *ngFor="let symptom of symptoms | async" size="4">
-              <ion-avatar  class="ion-align-items-center"  *ngIf="symptom.imgUrl" >
-                  <img (click)="onClick(symptom.id)" [src]="symptom.imgUrl" alt="" id="{{symptom.idname}}">
-              </ion-avatar>
-              <ion-item>
-                  <span>{{ symptom.name}} </span>
-              </ion-item>
-          </ion-col>
-      </ion-row>
-  </ion-grid>
+        </ion-row>
+    </ion-grid>
 
 
 
 
-  <!-- DIRECIONAR PARA UMA TELA DE CONFIRMAÇÃO DE ESCALA DE DOR + SINTOMAS (MOSTRA TUDO JA SELECIONADO) -->
-  <!-- <ion-button (click)="updatePainSymptoms()" color="secondary">Salvar Informações/Prosseguir</ion-button> -->
+    <!-- DIRECIONAR PARA UMA TELA DE CONFIRMAÇÃO DE ESCALA DE DOR + SINTOMAS (MOSTRA TUDO JA SELECIONADO) -->
+    <!-- <ion-button (click)="updatePainSymptoms()" color="secondary">Salvar Informações/Prosseguir</ion-button> -->
 
 </ion-content>
 
 <ion-footer>
-  <ion-button expand="block" color="dark-green">Confirmar Seleção</ion-button>
+    <ion-button expand="block" (click)="finishing()" color="dark-green">Confirmar Seleção</ion-button>
 </ion-footer>
