@@ -1,7 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Medicament } from './medicament';
 import { Component, OnInit } from '@angular/core';
-import { MedicamentService } from './medicamentService';
+import { MedicamentService } from './medicament.service';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { ToastService } from '../shared/toast.service';
 import { Observable } from 'rxjs';
