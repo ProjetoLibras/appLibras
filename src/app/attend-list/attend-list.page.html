@@ -1,0 +1,32 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="dark-green">
+    <ion-title class="ion-text-center">Atendimentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-grid>
+  <ion-row *ngFor="let attendlist of attend">
+    <ion-col size="12">
+      <ion-item>
+        <ion-input disabled="true" class="input">
+          <ion-label position="fixed">Data</ion-label>
+          <span>{{attendlist.date}}</span>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input disabled="true" class="input">
+          <ion-label position="fixed">Status</ion-label>
+          <span class="textcolorwarning" *ngIf="attendlist.status=='opened'">Aberto</span>
+          <span class="textcolorgreen" *ngIf="attendlist.status=='closed'">Fechado</span>
+        </ion-input>
+        <ion-button class="botao" [routerLink]="['/tabs/medicaments', attendlist.id]">
+          <ion-icon name="add"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-content>

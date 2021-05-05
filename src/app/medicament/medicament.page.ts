@@ -1,10 +1,10 @@
-import { ActivatedRoute, Router } from '@angular/router';
-import { Medicament } from './medicament';
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { User } from '../dashboard/shared/user';
+import { Medicament } from './medicament';
+import { ActivatedRoute } from '@angular/router';
+import { Attend } from './attend';
 import { MedicamentService } from './medicament.service';
-import { AngularFireStorage } from '@angular/fire/storage';
-import { ToastService } from '../shared/toast.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-medicament',
@@ -12,22 +12,34 @@ import { Observable } from 'rxjs';
   styleUrls: ['./medicament.page.scss'],
 })
 export class MedicamentPage implements OnInit {
-  medicament: Observable<any[]>;
-  private medicamentId: string = '';
-  title: string;
+  attend: Attend;
+  attendId: string;
+  username: string;
+  uId: string;
+  users: User;
+  medicaments: Medicament;
+  medicament: any[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute,
-              private medicamentService: MedicamentService,
-              private storage: AngularFireStorage,
-              private router: Router,
-              private toast: ToastService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private medicamentService: MedicamentService,
+    private afa: AngularFireAuth
+  ) { }
 
   ngOnInit() {
-    this.getAll();
-  }
+    this.medicaments = new Medicament();
 
-  getAll(){
-    this.medicament = this.medicamentService.getAll();
+    this.attendId = this.activatedRoute.snapshot.params['id'];
+    if (this.attendId) {
+      const subscribe = this.medicamentService.getAllSubMedicament(this.attendId).subscribe((data: any) => {
+        subscribe.unsubscribe();
+        console.log(data)
+        this.medicament = data;
+
+
+      })
+
+    }
   }
 
 }
