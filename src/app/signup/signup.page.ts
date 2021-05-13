@@ -48,7 +48,7 @@ export class SignupPage implements OnInit {
 
   async registerPaciente(){
     this.usersPaciente.email = this.email;
-    this.usersPaciente.password = this.password;
+    this.usersPaciente.password = this.password.toString();
     // this.usersPaciente.tipousuario = this.tipousuario;
 
     try {
@@ -78,20 +78,4 @@ export class SignupPage implements OnInit {
     this.usersPaciente.address_state = uf;
     this.usersPaciente.address_complement = complemento;
   }
-
-  // async registerAgentesaude(){
-  //   this.usersAgentesaude.email = this.email;
-  //   this.usersAgentesaude.password = this.password;
-  //   // this.usersAgentesaude.tipousuario = this.tipousuario;
-  //   // this.getProfessional(this.usersAgentesaude.id_professional);
-
-  // //   try {
-  // //     await this.auth.registerAgente(this.usersAgentesaude);
-  // //     this.toast.showMessageBottom('Usuário registrado com sucesso !!!', 'dark-green');
-  // //     this.router.navigate(['login']);
-  // //   } catch (error) {
-  // //     this.toast.showMessageTop(error,'danger');
-  // //   }
-  // // }
-
 }

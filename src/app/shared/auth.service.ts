@@ -25,7 +25,7 @@ export class AuthService {
     return this.usersCollection.doc<UsersPaciente>(id).valueChanges();
   }
   login(login: Login){
-    return this.afa.signInWithEmailAndPassword(login.email, login.password)
+    return this.afa.signInWithEmailAndPassword(login.email, login.password.toString())
   }
 
   logout(){
