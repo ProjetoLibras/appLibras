@@ -77,5 +77,7 @@ $ ionic serve
   <sub><a href="#">ANDREA FURLAN DE LIMA</a></sub><br>
   <sub><a href="#">VITORIA EMANUELE CARDOSO DOS SANTOS</a></sub><br>
   <sub><a href="#">FLAVIA GABRIELE SANTOS DE OLIVEIRA</a></sub><br>
+  <sub><a href="#">JANETE FERNANDES CARNEIRO</a></sub><br>
+  <sub><a href="#">SAMUEL GONÇALVES PEREIRA</a></sub><br>
 </div>
 <hr>
