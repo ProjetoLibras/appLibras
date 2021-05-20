@@ -46,6 +46,14 @@ _Necessario um arquivo API do firebase_
 src/
 ├── configFirebase.ts
 
+Exemple API:
+  apiKey: 
+  authDomain: 
+  projectId: 
+  storageBucket: 
+  messagingSenderId: 
+  appId: 
+  measurementId: 
 
 ```
 _Siga os passos abaixo_
