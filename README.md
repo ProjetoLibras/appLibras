@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="/src/assets/imgs/icon.jpg" width="150" />
+  <img src="/src/assets/imgs/Icon.jpg" width="150" />
   <h1>Libras</h1>
 </div>
 
