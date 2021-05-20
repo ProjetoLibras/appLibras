@@ -19,6 +19,7 @@ log.txt
 npm-debug.log*
 /src/firebaseConfig.ts
 
+/resources
 /.idea
 /.ionic
 /.sass-cache

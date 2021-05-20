@@ -22,10 +22,10 @@ const routes: Routes = [
         path: 'symptoms',
         loadChildren: () => import('../symptoms/symptoms.module').then( m => m.SymptomsPageModule)
       },
-      // {
-      //   path: 'symptoms/:id',
-      //   loadChildren: () => import('../symptoms/symptoms.module').then( m => m.SymptomsPageModule)
-      // },
+      {
+        path: 'symptoms/:id',
+        loadChildren: () => import('../symptoms/symptoms.module').then( m => m.SymptomsPageModule)
+      },
       {
         path: 'attend-list',
         loadChildren: () => import('../attend-list/attend-list.module').then( m => m.AttendListPageModule)
