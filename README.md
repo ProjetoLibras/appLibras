@@ -63,7 +63,7 @@ $ ionic serve
 
 <hr>
 <div>
-    <h3>Desenvolvedores</h3>
+    <h3>Desenvolvedores Tecnico informatica 1/19</h3>
 </div>
 <div align="center">
   <sub><a href="https://github.com/jsfernando">Prof.FERNANDO JACINTO DA SILVA</a></sub><br>
@@ -76,9 +76,10 @@ $ ionic serve
 <hr>
 
 <div>
-    <h3>Enfermagem</h3>
+    <h3>Tecnico Enfermagem</h3>
 </div>
 <div align="center">
+  <sub><a href="#">Prof.CARLA PRISCILA DA SILVA PEREIRA</a></sub><br>
   <sub><a href="#">GEOVANA BUCHARELLI MASTROROCO</a></sub><br>
   <sub><a href="#">ANDREA FURLAN DE LIMA</a></sub><br>
   <sub><a href="#">VITORIA EMANUELE CARDOSO DOS SANTOS</a></sub><br>
@@ -87,3 +88,6 @@ $ ionic serve
   <sub><a href="#">SAMUEL GONÇALVES PEREIRA</a></sub><br>
 </div>
 <hr>
+<div align="center">
+  <img src="https://www.sp.senac.br/o/senac-theme/images/logo_senac.png" width="150" align="center" />
+</div>
