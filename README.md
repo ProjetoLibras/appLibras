@@ -5,7 +5,7 @@
 
 # Sobre
 
-O objetivo deste projeto é facilitar a comunicação da comunidade de deficientes auditivos com profissionais da saúde com foco na urgência, e emergência, onde não e possível ter acesso a um interprete por conta de ser um ágil atendimento.
+(Projeto Acadêmico) O objetivo deste projeto é facilitar a comunicação da comunidade de deficientes auditivos com profissionais da saúde com foco na urgência, e emergência, onde não e possível ter acesso a um interprete por conta de ser um ágil atendimento.
 
 <div align="center">
   <img src="/src/assets/imgs/layoutApp.png" width="700" /> 
@@ -41,7 +41,13 @@ _Clone o projeto e acesse a pasta_
 $ git clone https://github.com/ProjetoLibras/appLibras.git
 $ cd appLibras/
 ```
+_Necessario um arquivo API do firebase_
+```bash
+src/
+├── configFirebase.ts
 
+
+```
 _Siga os passos abaixo_
 
 ```bash
@@ -60,7 +66,7 @@ $ ionic serve
     <h3>Desenvolvedores</h3>
 </div>
 <div align="center">
-  <sub><a href="https://github.com/jsfernando">FERNANDO JACINTO DA SILVA</a></sub><br>
+  <sub><a href="https://github.com/jsfernando">Prof.FERNANDO JACINTO DA SILVA</a></sub><br>
   <sub><a href="https://github.com/ViniciuCristian21">VINICIU CRISTIAN DA SILVA</a></sub><br>
   <sub><a href="https://github.com/viih96">VINICIUS VIEIRA DE ANDRADE</a></sub><br>
   <sub><a href="https://github.com/ivanprojetosti">IVAN SENA DA CRUZ</a></sub><br>
@@ -70,7 +76,7 @@ $ ionic serve
 <hr>
 
 <div>
-    <h3>Colaboradores</h3>
+    <h3>Enfermagem</h3>
 </div>
 <div align="center">
   <sub><a href="#">GEOVANA BUCHARELLI MASTROROCO</a></sub><br>
