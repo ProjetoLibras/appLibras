@@ -38,7 +38,7 @@ O objetivo deste projeto é facilitar a comunicação da comunidade de deficient
 _Clone o projeto e acesse a pasta_
 
 ```bash
-$ git clone 
+$ git clone https://github.com/ProjetoLibras/appLibras.git
 $ cd appLibras/
 ```
 
