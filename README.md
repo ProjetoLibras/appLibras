@@ -78,7 +78,7 @@ $ ionic serve
   <sub><a href="https://github.com/viih96">VINICIUS VIEIRA DE ANDRADE</a></sub><br>
   <sub><a href="https://github.com/ivanprojetosti">IVAN SENA DA CRUZ</a></sub><br>
   <sub><a href="https://github.com/AugustoSG">AUGUSTO SIQUEIRA GOMES</a></sub><br>
-  <sub><a href="https://github.com/TatianaTivo">TATIANA TIVO REDONDO</a></sub>
+  <sub><a href="https://github.com/TatianaTivo">TATIANA TIVO REDONDO</a></sub><br>
   <sub><a href="https://github.com/jsfernando">Prof.FERNANDO JACINTO DA SILVA</a></sub><br>
 </div>
 <hr>
