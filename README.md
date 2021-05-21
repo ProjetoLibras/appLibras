@@ -74,12 +74,12 @@ $ ionic serve
     <h3>Desenvolvedores Tecnico informatica 1/19</h3>
 </div>
 <div align="center">
-  <sub><a href="https://github.com/jsfernando">Prof.FERNANDO JACINTO DA SILVA</a></sub><br>
   <sub><a href="https://github.com/ViniciuCristian21">VINICIU CRISTIAN DA SILVA</a></sub><br>
   <sub><a href="https://github.com/viih96">VINICIUS VIEIRA DE ANDRADE</a></sub><br>
   <sub><a href="https://github.com/ivanprojetosti">IVAN SENA DA CRUZ</a></sub><br>
   <sub><a href="https://github.com/AugustoSG">AUGUSTO SIQUEIRA GOMES</a></sub><br>
   <sub><a href="https://github.com/TatianaTivo">TATIANA TIVO REDONDO</a></sub>
+  <sub><a href="https://github.com/jsfernando">Prof.FERNANDO JACINTO DA SILVA</a></sub><br>
 </div>
 <hr>
 
@@ -87,13 +87,13 @@ $ ionic serve
     <h3>Tecnico Enfermagem</h3>
 </div>
 <div align="center">
-  <sub><a href="#">Prof.CARLA PRISCILA DA SILVA PEREIRA</a></sub><br>
   <sub><a href="#">GEOVANA BUCHARELLI MASTROROCO</a></sub><br>
   <sub><a href="#">ANDREA FURLAN DE LIMA</a></sub><br>
   <sub><a href="#">VITORIA EMANUELE CARDOSO DOS SANTOS</a></sub><br>
   <sub><a href="#">FLAVIA GABRIELE SANTOS DE OLIVEIRA</a></sub><br>
   <sub><a href="#">JANETE FERNANDES CARNEIRO</a></sub><br>
   <sub><a href="#">SAMUEL GONÇALVES PEREIRA</a></sub><br>
+  <sub><a href="#">Prof.CARLA PRISCILA DA SILVA PEREIRA</a></sub><br>
 </div>
 <hr>
 <div align="center">
